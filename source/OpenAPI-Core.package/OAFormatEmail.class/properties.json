@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OAFormat",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OAFormatEmail",
+	"type" : "normal"
+}

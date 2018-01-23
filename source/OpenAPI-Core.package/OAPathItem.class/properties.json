@@ -1,0 +1,23 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"summary",
+		"description",
+		"get",
+		"put",
+		"post",
+		"delete",
+		"options",
+		"head",
+		"patch",
+		"trace",
+		"servers"
+	],
+	"name" : "OAPathItem",
+	"type" : "normal"
+}

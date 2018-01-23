@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "ZnRestUriSpace",
+	"category" : "OpenAPI-REST",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"rootClass"
+	],
+	"name" : "OpenAPIUriSpace",
+	"type" : "normal"
+}

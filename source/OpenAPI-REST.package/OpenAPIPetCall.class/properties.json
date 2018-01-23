@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "OpenAPICall",
+	"category" : "OpenAPI-REST",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"petId"
+	],
+	"name" : "OpenAPIPetCall",
+	"type" : "normal"
+}

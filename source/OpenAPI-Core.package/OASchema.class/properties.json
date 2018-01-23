@@ -1,0 +1,18 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"title",
+		"type",
+		"format",
+		"required",
+		"default",
+		"properties"
+	],
+	"name" : "OASchema",
+	"type" : "normal"
+}

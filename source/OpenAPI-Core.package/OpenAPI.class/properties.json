@@ -1,0 +1,20 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"version",
+		"info",
+		"servers",
+		"paths",
+		"components",
+		"security",
+		"tags",
+		"externalDocs"
+	],
+	"name" : "OpenAPI",
+	"type" : "normal"
+}

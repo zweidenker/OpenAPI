@@ -1,0 +1,16 @@
+as yet unclassified
+parameterObjectString
+	^ '{
+  "name": "token",
+  "in": "header",
+  "description": "token to be passed as a header",
+  "required": true,
+  "schema": {
+    "type": "array",
+    "items": {
+      "type": "integer",
+      "format": "int64"
+    }
+  },
+  "style": "simple"
+}'

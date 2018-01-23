@@ -1,0 +1,24 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"tags",
+		"summary",
+		"description",
+		"externalDocs",
+		"operationId",
+		"parameters",
+		"requestBody",
+		"responses",
+		"callbacks",
+		"deprecated",
+		"security",
+		"servers"
+	],
+	"name" : "OAOperation",
+	"type" : "normal"
+}

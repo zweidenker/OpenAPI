@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OARequestAccessor",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OAPathAccessor",
+	"type" : "normal"
+}
