@@ -3,7 +3,9 @@ neoJsonMapping: mapper
 	mapper for: self do: [ :mapping |
 		mapping mapAccessors: #( openapi servers components security tags externalDocs ).
 		(mapping mapAccessor: #info) valueSchema: OAInfo.
-		(mapping mapAccessor: #paths) valueSchema: OAPaths
+		(mapping mapAccessor: #paths) valueSchema: #OAPaths ].
+	mapper for: #OAPaths customDo: [ :mapping |
+		mapping  mapWithValueSchema: OAPathItem ].  
 		"(mapping mapInstVar: #timestamp to: 'created-at') valueSchema: DateAndTime.
 		(mapping mapInstVar: #points) valueSchema: #ArrayOfPoints.
 		(mapping mapInstVar: #bytes) valueSchema: ByteArray ].
@@ -14,4 +16,4 @@ neoJsonMapping: mapper
 		mapping listOfElementSchema: Point ].  
 	mapper mapAllInstVarsFor: Point.
 	mapper for: ByteArray customDo: [ :mapping |
-		mapping listOfType: ByteArray" ]
+		mapping listOfType: ByteArray" 
