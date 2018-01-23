@@ -6,7 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"version",
+		"openapi",
 		"info",
 		"servers",
 		"paths",

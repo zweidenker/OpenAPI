@@ -1,3 +1,4 @@
 accessing
 paths
-	^ paths
+	^ paths ifNil: [ 
+		paths := self buildPaths ]
