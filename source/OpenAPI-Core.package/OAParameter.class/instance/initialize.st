@@ -1,4 +1,7 @@
 initialization
 initialize
 	super initialize.
-	required := false
+	deprecated := false.
+	allowEmptyValue := false.
+	required := false.
+	allowReserved := false.
