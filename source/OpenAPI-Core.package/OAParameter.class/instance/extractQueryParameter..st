@@ -1,3 +1,9 @@
 extracting
-extractQueryParameter: aCall 
-	^ aCall request uri queryAt: name
+extractQueryParameter: aCall
+	| value |
+	value := aCall request uri 
+		queryAt: name
+		ifAbsent: [ 
+			required ifTrue: [ 
+				OAMissingRequiredParameter signal: 'parameter ', name, ' is required but not present' ]].
+	^ value
