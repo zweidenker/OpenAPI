@@ -1,0 +1,3 @@
+accessing
+useAccessors
+	writeUsingAccessors := true

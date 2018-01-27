@@ -19,7 +19,9 @@
 		"example",
 		"examples",
 		"content",
-		"accessor"
+		"accessor",
+		"writeUsingAccessors",
+		"constraints"
 	],
 	"name" : "OAParameter",
 	"type" : "normal"

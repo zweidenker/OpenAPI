@@ -1,5 +1,5 @@
-as yet unclassified
+initialization
 initializeParameters
 	(self class parametersForMethod: request method asLowercase)
 		collect: [ :each | 
-			self instVarNamed: each name put: (each extractParameter: self) ].
+			each writeParameterValueOn: self ]

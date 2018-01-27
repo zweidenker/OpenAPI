@@ -1,5 +1,8 @@
 validating
-validateAndConvert: value
-	schema validate: value.
-	^ (schema convert: value)
+validateAndConvert: input
+	| value |
+	schema validate: input.
+	value := schema convert: input.
+	self validateContraints: value.
+	^ value
 	
