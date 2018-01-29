@@ -6,4 +6,4 @@ extractQueryParameter: aCall
 		ifAbsent: [ 
 			required ifTrue: [ 
 				OAMissingRequiredParameter signal: 'parameter ', name, ' is required but not present' ]].
-	^ value
+	^ schema readString: value
