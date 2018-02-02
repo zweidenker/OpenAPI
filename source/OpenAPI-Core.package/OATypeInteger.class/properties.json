@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OAType",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OATypeInteger",
+	"type" : "normal"
+}
