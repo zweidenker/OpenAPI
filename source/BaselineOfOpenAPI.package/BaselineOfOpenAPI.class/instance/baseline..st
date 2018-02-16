@@ -3,7 +3,8 @@ baseline: spec
 	<baseline>
 	spec for: #common do: [
 		spec 
-			package: 'OpenAPI-Core' with: [ spec requires: #('NeoJSON') ];
+			package: 'JSONSchema-Core' with: [ spec requires: #('NeoJSON') ];
+			package: 'OpenAPI-Core' with: [ spec requires: #( 'JSONSchema-Core' 'NeoJSON') ];
 			package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core' 'Zinc') ];
 			project: 'Zinc' with: [
 				spec
