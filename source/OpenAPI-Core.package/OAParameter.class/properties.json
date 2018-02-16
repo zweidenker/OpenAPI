@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "Object",
+	"super" : "OABasicObject",
 	"category" : "OpenAPI-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

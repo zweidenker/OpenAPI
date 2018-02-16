@@ -1,14 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "JSONSchema",
+	"super" : "OAIntegerFormat",
 	"category" : "OpenAPI-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"format",
-		"default"
-	],
-	"name" : "OASchema",
+	"instvars" : [ ],
+	"name" : "OAFormatInt32",
 	"type" : "normal"
 }

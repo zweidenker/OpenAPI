@@ -1,14 +1,16 @@
 {
 	"commentStamp" : "",
-	"super" : "JSONSchema",
+	"super" : "OABasicObject",
 	"category" : "OpenAPI-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"format",
-		"default"
+		"schema",
+		"example",
+		"examples",
+		"encoding"
 	],
-	"name" : "OASchema",
+	"name" : "OAMediaTypeObject",
 	"type" : "normal"
 }

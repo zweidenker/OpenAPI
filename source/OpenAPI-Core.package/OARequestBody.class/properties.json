@@ -1,14 +1,15 @@
 {
 	"commentStamp" : "",
-	"super" : "JSONSchema",
+	"super" : "Object",
 	"category" : "OpenAPI-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"format",
-		"default"
+		"description",
+		"content",
+		"required"
 	],
-	"name" : "OASchema",
+	"name" : "OARequestBody",
 	"type" : "normal"
 }

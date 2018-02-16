@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "OAFormat",
+	"super" : "OAStringFormat",
 	"category" : "OpenAPI-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],

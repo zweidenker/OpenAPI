@@ -1,0 +1,21 @@
+{
+	"commentStamp" : "",
+	"super" : "OABasicObject",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"schemas",
+		"responses",
+		"parameters",
+		"examples",
+		"requestBodies",
+		"headers",
+		"securitySchemes",
+		"links",
+		"callbacks"
+	],
+	"name" : "OAComponents",
+	"type" : "normal"
+}
