@@ -1,7 +1,7 @@
 accessing
 neoJsonMapping: mapper
 	mapper for: self do: [ :mapping |
-		mapping mapAccessors: #( example examples encoding ).
+		mapping mapAccessors: #( encoding ).
 		(mapping mapAccessor: #schema) valueSchema: #SchemaOrReference.
 		(mapping mapAccessor: #example) valueSchema: OAExample.
 		(mapping mapAccessor: #examples) valueSchema: #OAExamples ].

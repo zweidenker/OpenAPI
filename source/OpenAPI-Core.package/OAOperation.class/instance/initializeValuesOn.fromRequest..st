@@ -1,4 +1,12 @@
 reading
 initializeValuesOn: object fromRequest: request
-	self parameters collect: [ :each | 
-		each writeParameterValueOn: object ].
+	parameters ifNotNil: [
+		parameters do: [ :each | 
+			each writeParameterValueOn: object ]].
+	requestBody ifNotNil: [ 
+		"visitor := OAReadVisitor new
+			object: object;
+			call: request;
+			visit: requestBody."
+		"object instVarNamed: #body put:" 
+		(requestBody readFrom: request object: object) ]

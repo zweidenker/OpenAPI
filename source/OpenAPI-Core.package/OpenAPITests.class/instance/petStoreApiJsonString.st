@@ -48,7 +48,7 @@ petStoreApiJsonString
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "$ref": "#/components/schemas/Pets"
                 }
               }
             }
@@ -75,7 +75,7 @@ petStoreApiJsonString
 		     "content": {
               "application/json": {
                  "schema": {
-                    "$ref": "#/components/schemas/Pets"
+                    "$ref": "#/components/schemas/Pet"
                  }
               }
            }

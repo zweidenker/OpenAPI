@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "OAVisitor",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"object",
+		"call"
+	],
+	"name" : "OAReadVisitor",
+	"type" : "normal"
+}
