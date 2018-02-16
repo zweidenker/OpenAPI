@@ -5,4 +5,5 @@ valueOrReferenceSchema: valueSchema
 		 jsonReader nextAs: ((jsonReader peekFirstKey = '$ref')
 					ifTrue: [ OAReference ]
 					ifFalse: [ valueSchema ] ) ].
-	self writer: [ :jsonWriter :map | self halt ]
+	self writer: [ :jsonWriter :map | 
+		jsonWriter nextPut: map ]
