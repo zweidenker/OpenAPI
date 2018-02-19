@@ -1,4 +1,4 @@
 accessing
 buildPaths
-	^ ((self class rootCallClass allSubclasses reject: #isAbstract) 
+	^ ((self class rootCallClass withAllSubclasses reject: #isAbstract) 
 		collect: [ :each | each path -> each pathItem ]) asDictionary.
