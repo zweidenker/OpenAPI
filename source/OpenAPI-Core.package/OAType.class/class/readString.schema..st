@@ -1,3 +1,3 @@
 reading
-readString: string schema: schema
+readString: collection schema: schema
 	self subclassResponsibility 

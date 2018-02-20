@@ -1,3 +1,3 @@
 as yet unclassified
-read: aString object: object
-	^ schema readString: aString object: object
+read: value object: object
+	^ schema readString: value object: object
