@@ -1,5 +1,4 @@
 accessing
 beStringFormattedAs: aString
-	schema := OASchema new
-		typeString: 'string';
+	schema := OASchema string
 		formatString: aString
