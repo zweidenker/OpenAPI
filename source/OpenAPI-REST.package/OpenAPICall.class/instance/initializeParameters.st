@@ -3,5 +3,5 @@ initializeParameters
 	| operation |
 	operation := self class operationForMethod: request method asLowercase.
 	operation 
-		initializeValuesOn: self valueObject
+		initializeValuesOn: self valueDelegate
 		fromRequest: self

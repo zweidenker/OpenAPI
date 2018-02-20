@@ -1,3 +1,3 @@
 accessing
-valueObject
+valueDelegate
 	^ self 
