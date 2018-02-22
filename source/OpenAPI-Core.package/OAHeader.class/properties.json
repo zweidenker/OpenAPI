@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "OABasicObject",
-	"category" : "OpenAPI-Core-Tests",
+	"category" : "OpenAPI-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
