@@ -1,0 +1,17 @@
+as yet unclassified
+responseObjectJSON
+	^ '
+{
+  "description": "A complex object array response",
+  "content": {
+    "application/json": {
+      "schema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/VeryComplexType"
+        }
+      }
+    }
+  }
+}
+'.
