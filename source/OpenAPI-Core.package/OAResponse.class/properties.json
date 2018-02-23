@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "OABasicObject",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"description",
+		"headers",
+		"content",
+		"links"
+	],
+	"name" : "OAResponse",
+	"type" : "normal"
+}
