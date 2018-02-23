@@ -1,8 +1,9 @@
 tests
 testParsingPaths
 	| paths |
-	paths := (NeoJSONReader on: self pathsObjectJSON readStream) 
-		for: #OAPaths customDo: [ :mapping |
-			mapping mapWithValueSchema: OAPathItem  ];
+	paths := (NeoJSONReader on: self pathsObjectJSON readStream)
+		for: #OAPaths customDo: [ :mapping | mapping mapWithValueSchema: OAPathItem. ];
 		nextAs: #OAPaths.
-	self assert: paths notEmpty. 
+	self assert: paths notEmpty.
+
+	paths should haveSize: 1.
