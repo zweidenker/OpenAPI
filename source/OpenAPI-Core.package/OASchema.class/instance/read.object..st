@@ -4,6 +4,6 @@ read: string object: object
 	dict := NeoJSONReader fromString: string.
 	properties keysAndValuesDo: [ :name :schema |
 		object 
-			instVarNamed: name
-			put: (schema readString: (dict at: name) ) ].
+			perform: name asMutator 
+			with: (schema readString: (dict at: name) ) ].
 	^ object
