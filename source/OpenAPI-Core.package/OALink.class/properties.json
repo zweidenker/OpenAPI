@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "OAParameter",
+	"super" : "OABasicObject",
 	"category" : "OpenAPI-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "OAHeader",
+	"name" : "OALink",
 	"type" : "normal"
 }

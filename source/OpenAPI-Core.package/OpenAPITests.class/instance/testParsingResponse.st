@@ -1,6 +1,6 @@
 tests
 testParsingResponse
-	| operation response |
+	| response |
 	response := NeoJSONReader fromString: self responseObjectJSON as: OAResponse.
 
 	response should beInstanceOf: OAResponse.
@@ -11,4 +11,3 @@ testParsingResponse
 		haveSize: 1;
 		includeKey: 'application/json'.
 	response content values do: [ :each | each should beInstanceOf: OAMediaTypeObject. ].
-	response content inspect.
