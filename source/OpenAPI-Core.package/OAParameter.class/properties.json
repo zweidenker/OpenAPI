@@ -21,7 +21,8 @@
 		"content",
 		"accessor",
 		"writeUsingAccessors",
-		"constraints"
+		"constraints",
+		"location"
 	],
 	"name" : "OAParameter",
 	"type" : "normal"
