@@ -1,0 +1,3 @@
+accessing
+parameterSchema
+	^ parameter schema.

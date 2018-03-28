@@ -5,7 +5,7 @@ read: string object: object
 	properties keysAndValuesDo: [ :name :schema |
 		dict 
 			at: name
-			ifPresent: [ :value | 
+			ifPresent: [ :value | self hatl.
 				object 
 					perform: name asMutator 
 				with: (schema readString: value) ]

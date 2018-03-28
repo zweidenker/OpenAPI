@@ -1,3 +1,3 @@
 printing
 printOn: aStream
-	aStream << 'OAParameter name; ' << name << ', in: ' << in
+	aStream << 'OAParameter name: ' << name << ', in: ' << in
