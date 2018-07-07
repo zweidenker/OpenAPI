@@ -1,3 +1,4 @@
 accessing
-options: anObject
-	options := anObject
+options: anOperation
+	anOperation pathItem: self.
+	options := anOperation 

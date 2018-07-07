@@ -1,3 +1,4 @@
 accessing
-get: anObject
-	get := anObject
+get: anOperation
+	anOperation pathItem: self.
+	get := anOperation 

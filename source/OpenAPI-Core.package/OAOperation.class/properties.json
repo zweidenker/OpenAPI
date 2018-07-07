@@ -1,11 +1,12 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "OpenAPI-Core",
+	"category" : "OpenAPI-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
+		"pathItem",
 		"tags",
 		"summary",
 		"description",

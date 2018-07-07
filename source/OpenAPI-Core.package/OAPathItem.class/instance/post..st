@@ -1,3 +1,4 @@
 accessing
-post: anObject
-	post := anObject
+post: anOperation
+	anOperation pathItem: self.
+	post := anOperation 

@@ -1,3 +1,4 @@
 accessing
-put: anObject
-	put := anObject
+put: anOperation
+	anOperation pathItem: self.
+	put := anOperation 

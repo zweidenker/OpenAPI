@@ -1,3 +1,4 @@
 accessing
-head: anObject
-	head := anObject
+head: anOperation
+	anOperation pathItem: self.
+	head := anOperation 
