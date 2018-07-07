@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "JSONSchema",
-	"category" : "OpenAPI-Core",
+	"category" : "OpenAPI-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

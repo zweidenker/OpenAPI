@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "OAType",
-	"category" : "OpenAPI-Core",
+	"category" : "OpenAPI-Core-Types",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
