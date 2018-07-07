@@ -3,7 +3,7 @@ SmalltalkCISpec {
       SCIMetacelloLoadSpec {
           #baseline : 'OpenAPI',
           #directory : 'source',
-          #load : [ 'all' ],
+          #load : [ 'Tests' ],
           #platforms : [ #pharo ]
       }
   ]
