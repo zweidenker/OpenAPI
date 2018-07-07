@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OAParameterLocation",
+	"category" : "OpenAPI-Core-Model",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OABodyParameterLocation",
+	"type" : "normal"
+}
