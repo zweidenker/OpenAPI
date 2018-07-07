@@ -1,3 +1,3 @@
 visiting
-accept: aVisitor 
+acceptOpenApi: aVisitor 
 	^ aVisitor visitSchema: self

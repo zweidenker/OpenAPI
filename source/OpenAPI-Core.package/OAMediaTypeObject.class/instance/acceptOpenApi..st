@@ -1,3 +1,3 @@
 visting
-accept: aVisitor 
+acceptOpenApi: aVisitor 
 	^ aVisitor visitMediaTypeObject: self

@@ -9,7 +9,8 @@
 		"schema",
 		"example",
 		"examples",
-		"encoding"
+		"encoding",
+		"response"
 	],
 	"name" : "OAMediaTypeObject",
 	"type" : "normal"

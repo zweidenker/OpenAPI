@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OAIntegerFormat",
+	"category" : "OpenAPI-Core-Formats",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OAFormatUnsignedInteger64",
+	"type" : "normal"
+}

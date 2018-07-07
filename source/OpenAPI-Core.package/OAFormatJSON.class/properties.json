@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OAStringFormat",
+	"category" : "OpenAPI-Core-Formats",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OAFormatJSON",
+	"type" : "normal"
+}

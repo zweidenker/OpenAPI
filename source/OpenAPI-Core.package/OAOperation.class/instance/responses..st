@@ -1,3 +1,4 @@
 accessing
-responses: anObject
-	responses := anObject
+responses: aDictionary
+	aDictionary values do: [ :each | each operation: self ].
+	responses := aDictionary
