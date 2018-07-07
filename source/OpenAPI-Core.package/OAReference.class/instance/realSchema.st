@@ -1,3 +1,3 @@
 as yet unclassified
 realSchema
-	^ self api resolveSchema: path
+	^ self api resolvePath: path
