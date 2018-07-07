@@ -1,0 +1,10 @@
+SmalltalkCISpec {
+  #loading : [
+      SCIMetacelloLoadSpec {
+          #baseline : 'OpenAPI',
+          #load : [ 'all' ],
+          #platforms : [ #pharo ]
+      }
+  ]
+}
+
