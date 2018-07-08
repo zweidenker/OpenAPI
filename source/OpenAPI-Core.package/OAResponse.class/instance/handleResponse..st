@@ -1,3 +1,12 @@
 as yet unclassified
 handleResponse: aZnResponse 
-	^ (content at: aZnResponse contentType asString) handleResponse: aZnResponse contents
+	| contentType |
+	contentType := aZnResponse contentType clearCharSet.
+	content 
+		at: contentType asString
+		ifPresent: [:mediaObject |
+			^ mediaObject 
+				handleResponse: (self 
+					convert: aZnResponse contents 
+					contentType: contentType) ].
+	Error signal: 'cannot find object for media ', contentType asString.
