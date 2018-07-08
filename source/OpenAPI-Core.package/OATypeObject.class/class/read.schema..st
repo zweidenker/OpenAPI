@@ -1,7 +1,7 @@
 as yet unclassified
 read: anObject schema: aSchema 
-	| object property |
-	object := Dictionary new.
+	| object |
+	object := NeoJSONObject new.
 	aSchema hasProperties ifTrue: [  
 		aSchema properties keysAndValuesDo: [ :key :schema |
 			anObject 
