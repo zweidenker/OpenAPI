@@ -10,7 +10,8 @@
 		"type",
 		"required",
 		"properties",
-		"items"
+		"items",
+		"className"
 	],
 	"name" : "JSONSchema",
 	"type" : "normal"

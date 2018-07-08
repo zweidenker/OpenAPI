@@ -1,6 +1,7 @@
 as yet unclassified
 readFrom: aString 
-	| json result |
-	json := NeoJSONReader fromString: aString.
-	result := type read: json schema: self.
-	self halt.
+	| json |
+	json := (NeoJSONReader on: aString readStream)
+		mapClass: NeoJSONObject;
+		next.
+	^ type read: json schema: self.
