@@ -12,7 +12,7 @@ baseline: spec
 				project: 'Zinc'
 					with: [ spec
 						className: #ConfigurationOfZincHTTPComponents;
-						versionString: '2.8.10';
+						versionString: '2.9.2';
 						loads: #('REST');
 						repository: 'http://mc.stfx.eu/ZincHTTPComponents'. ];
 				project: 'NeoJSON'
