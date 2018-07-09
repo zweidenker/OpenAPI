@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OpenAPI-Client",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"baseUri",
+		"openApi"
+	],
+	"name" : "OpenApiClient",
+	"type" : "normal"
+}

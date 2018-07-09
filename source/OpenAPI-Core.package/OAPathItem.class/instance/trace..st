@@ -1,3 +1,4 @@
 accessing
-trace: anObject
-	trace := anObject
+trace: anOperation
+	anOperation pathItem: self.
+	trace := anOperation 

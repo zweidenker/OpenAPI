@@ -1,12 +1,10 @@
 tests
 testParsingOpenAPI
 	| api path |
-	api := OpenAPI fromString: self openApiJsonString.
-	self assert: api info title equals: 'Sample Pet Store App'.
+	api := OpenAPI fromString: self petStoreApiJsonString.
+	self assert: api info title equals: 'Swagger Petstore'.
 	self assert: api openapi equals: '3.0.0'.
-	self assert: api paths size = 1.
-
-	api paths should haveSize: 1.
+	self assert: api paths size = 2.
 
 	path := api paths values first.
 	path should beInstanceOf: OAPathItem.

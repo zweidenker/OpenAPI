@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "OANumberFormat",
-	"category" : "OpenAPI-Core",
+	"category" : "OpenAPI-Core-Formats",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],

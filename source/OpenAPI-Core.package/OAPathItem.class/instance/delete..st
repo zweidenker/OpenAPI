@@ -1,3 +1,4 @@
 accessing
-delete: anObject
-	delete := anObject
+delete: anOperation
+	anOperation pathItem: self.
+	delete := anOperation

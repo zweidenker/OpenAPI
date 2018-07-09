@@ -8,7 +8,8 @@ baseline: spec
 				package: 'JSONSchema-Core' with: [ spec requires: #('NeoJSON'). ];
 				package: 'OpenAPI-Core' with: [ spec requires: #('JSONSchema-Core' 'NeoJSON'). ];
 				package: 'OpenAPI-Core-Tests' with: [ spec requires: #('OpenAPI-Core' 'Mocketry'). ];
-				package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core' 'Zinc'). ];
+				package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core' 'Zinc') ];
+				package: 'OpenAPI-Client' with: [ spec requires: #('OpenAPI-Core') ];
 				project: 'Zinc'
 					with: [ spec
 						className: #ConfigurationOfZincHTTPComponents;
@@ -24,6 +25,8 @@ baseline: spec
 			spec baseline: 'Mocketry' with: [ spec repository: 'github://dionisiydk/Mocketry:v4.0.x'. ].
 
 			spec
-				group: 'default' with: #('Core' 'Tests');
-				group: 'Core' with: #('OpenAPI-Core' 'OpenAPI-REST');
+				group: 'default' with: #('Core');
+				group: 'Core' with: #('OpenAPI-Core');
+				group: 'REST' with: #('Core' 'OpenAPI-REST');
+				group: 'Client' with: #('Core' 'OpenAPI-Client');
 				group: 'Tests' with: #('OpenAPI-Core-Tests'). ].

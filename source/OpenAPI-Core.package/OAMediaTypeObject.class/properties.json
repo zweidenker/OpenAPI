@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "OABasicObject",
-	"category" : "OpenAPI-Core",
+	"category" : "OpenAPI-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
@@ -9,7 +9,8 @@
 		"schema",
 		"example",
 		"examples",
-		"encoding"
+		"encoding",
+		"response"
 	],
 	"name" : "OAMediaTypeObject",
 	"type" : "normal"

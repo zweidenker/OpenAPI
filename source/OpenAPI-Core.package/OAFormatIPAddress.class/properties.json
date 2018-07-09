@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OAFormat",
+	"category" : "OpenAPI-Core-Formats",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OAFormatIPAddress",
+	"type" : "normal"
+}

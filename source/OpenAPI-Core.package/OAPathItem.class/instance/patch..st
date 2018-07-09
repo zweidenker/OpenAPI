@@ -1,3 +1,4 @@
 accessing
-patch: anObject
-	patch := anObject
+patch: anOperation
+	anOperation pathItem: self.
+	patch := anOperation 

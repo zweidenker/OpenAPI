@@ -1,3 +1,6 @@
 visiting
 visit: object
-	^ object accept: self
+	object ifNil: [ ^ object ].
+	object isString ifTrue: [ ^ object ].
+	object isCollection ifTrue: [ ^ self visitAll: object ].
+	^ object acceptOpenApi: self 
