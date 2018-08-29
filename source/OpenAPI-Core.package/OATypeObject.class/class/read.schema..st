@@ -6,6 +6,9 @@ read: anObject schema: aSchema
 		aSchema properties keysAndValuesDo: [ :key :schema |
 			anObject 
 				at: key
-				ifPresent: [ :val | 
-					object at: key put: (schema read: val) ] ] ].
+				ifPresent: [ :val |
+					self flag: #todo.
+					"disabling nil values here. Needs to be checked what needs to be done
+					with existing key but nil value" 
+					val ifNotNil: [ object at: key put: (schema read: val) ] ] ] ].
 	^ object
