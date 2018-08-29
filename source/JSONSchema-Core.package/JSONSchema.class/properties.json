@@ -11,7 +11,8 @@
 		"required",
 		"properties",
 		"items",
-		"className"
+		"className",
+		"description"
 	],
 	"name" : "JSONSchema",
 	"type" : "normal"

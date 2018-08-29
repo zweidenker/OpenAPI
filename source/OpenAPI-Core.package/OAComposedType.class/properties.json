@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "OAType",
+	"category" : "OpenAPI-Core-Types",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"schemas"
+	],
+	"name" : "OAComposedType",
+	"type" : "normal"
+}

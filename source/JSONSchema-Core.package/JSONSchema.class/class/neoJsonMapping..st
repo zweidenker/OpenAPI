@@ -5,9 +5,14 @@ neoJsonMapping: mapper
 		(mapping mapInstVar: #properties) valueSchema: #PropertiesDictionary.
 		(mapping mapInstVar: #items) valueSchema: #Items.
 		"mapping mapAccessors: #( multipleOf maximum exclusiveMaximum minimum exclusiveMinimum maxLength minLength pattern maxItems minItems uniqueItems maxProperties minProperties enum )."
-		"mapping mapAccessors: #( allOf oneOf anyOf not items additionalProperties description  )."
+		(mapping mapAccessor: #allOf) valueSchema: #SchemaList.
+		"mapping mapAccessors: #( oneOf anyOf not items additionalProperties description  )."
 		 ].
 	mapper for: #Items customDo: [ :mapping |
 		mapping valueOrReferenceSchema: OASchema ].
 	mapper for: #PropertiesDictionary customDo: [ :mapping |
-		mapping mapWithValueSchema: OASchema ].
+		mapping mapWithValueSchema: #SchemaOrReference ].
+	mapper for: #SchemaOrReference customDo: [ :mapping |
+		mapping  valueOrReferenceSchema: OASchema ].
+	mapper for: #SchemaList customDo: [ :mapping |
+		mapping listOfElementSchema: #SchemaOrReference. ]
