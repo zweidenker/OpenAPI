@@ -1,4 +1,3 @@
 reading
 fromString: aString 
-	^  (NeoJSONReader fromString: aString as: self)
-			prepare
+	^ self readFrom: aString readStream 
