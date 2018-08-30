@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "OAComposedType",
+	"super" : "OATpeComposedObject",
 	"category" : "OpenAPI-Core-Types",
 	"classinstvars" : [ ],
 	"pools" : [ ],

@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "OAPrimitiveType",
+	"super" : "OAType",
 	"category" : "OpenAPI-Core-Types",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "OATypeNumber",
+	"name" : "OATypeBasicObject",
 	"type" : "normal"
 }

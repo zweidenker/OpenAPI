@@ -1,0 +1,3 @@
+visiting
+visitTypeObject: aTypeObject
+	^ aTypeObject

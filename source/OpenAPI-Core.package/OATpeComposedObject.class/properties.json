@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "OAType",
+	"super" : "OATypeBasicObject",
 	"category" : "OpenAPI-Core-Types",
 	"classinstvars" : [ ],
 	"pools" : [ ],
@@ -8,6 +8,6 @@
 	"instvars" : [
 		"schemas"
 	],
-	"name" : "OAComposedType",
+	"name" : "OATpeComposedObject",
 	"type" : "normal"
 }
