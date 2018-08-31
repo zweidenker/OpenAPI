@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OpenAPITests",
+	"category" : "OpenAPI-Core-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OATypeTests",
+	"type" : "normal"
+}

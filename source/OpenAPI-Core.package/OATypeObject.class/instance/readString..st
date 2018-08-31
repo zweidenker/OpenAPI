@@ -1,5 +1,5 @@
 reading
-readString: string schema: schema
+readString: string
 	| reader input dict |
 	dict := Dictionary new.
 	reader := NeoJSONReader on: string readStream.

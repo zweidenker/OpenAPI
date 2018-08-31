@@ -1,3 +1,3 @@
-as yet unclassified
-readString: aString 
+reading
+readString: aString
 	^ aString

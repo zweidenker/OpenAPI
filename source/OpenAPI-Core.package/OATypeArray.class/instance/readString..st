@@ -1,4 +1,4 @@
 reading
-readString: collection schema: schema
+readString: collection
 	^ collection collect: [ :each |
 		schema items readString: each ]

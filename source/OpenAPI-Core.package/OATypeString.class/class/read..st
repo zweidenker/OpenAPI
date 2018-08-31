@@ -1,0 +1,3 @@
+reading
+read: aString
+	^ aString

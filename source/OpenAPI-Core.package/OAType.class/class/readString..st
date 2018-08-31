@@ -1,3 +1,3 @@
 reading
-readString: anObject
+readString: collection
 	self subclassResponsibility 

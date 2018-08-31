@@ -1,5 +1,5 @@
 instance creation
-read: aString schema: schema
+read: aString 
 	^ aString asInteger 
 		ifNil: [ OATypeError signal: 'not an integer' ]
 	
