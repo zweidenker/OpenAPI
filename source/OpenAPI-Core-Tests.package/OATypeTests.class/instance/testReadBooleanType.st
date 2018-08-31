@@ -1,3 +1,5 @@
 tests
 testReadBooleanType
-	OATypeBoolean read: 'foo'
+	self 
+		shouldnt: [ OATypeBoolean read: true ]
+		raise: Exception 

@@ -1,5 +1,5 @@
 instance creation
 readString: aString
-	^ aString asInteger 
-		ifNil: [ OATypeError signal: 'not an integer' ]
+	^ self read: (aString asInteger 
+		ifNil: [ OATypeError signal: 'not an integer' ])
 	
