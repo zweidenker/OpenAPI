@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONIntegerFormat",
+	"category" : "JSONSchema-Core-Formats",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONFormatInt64",
+	"type" : "normal"
+}

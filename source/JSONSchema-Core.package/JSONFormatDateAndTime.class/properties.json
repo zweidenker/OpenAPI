@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONStringFormat",
+	"category" : "JSONSchema-Core-Formats",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONFormatDateAndTime",
+	"type" : "normal"
+}

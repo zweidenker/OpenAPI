@@ -1,3 +1,3 @@
 accessing
 formatString: aString 
-	format := OAFormat formatNamed: aString
+	format := JSONFormat formatNamed: aString

@@ -4,5 +4,5 @@ readString: aString
 		^ true ].
 	(aString = 'false') ifTrue: [ 
 		^ false ].
-	^ OATypeError signal: 'not a boolean'
+	^ JSONTypeErrror signal: 'not a boolean'
 	
