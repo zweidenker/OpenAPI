@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONTypeComposedObject",
+	"category" : "JSONSchema-Core-Types",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONAllOfType",
+	"type" : "normal"
+}

@@ -7,6 +7,7 @@ neoJsonMapping: mapper
 		"mapping mapAccessors: #( multipleOf maximum exclusiveMaximum minimum exclusiveMinimum maxLength minLength pattern maxItems minItems uniqueItems maxProperties minProperties enum )."
 		(mapping mapAccessor: #allOf) valueSchema: #SchemaList.
 		"mapping mapAccessors: #( oneOf anyOf not items additionalProperties description  )."
+		mapping mapAccessor: #typeString mutator: #typeString: to: #type.
 		 ].
 	mapper for: #Items customDo: [ :mapping |
 		mapping valueOrReferenceSchema: OASchema ].

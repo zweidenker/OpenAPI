@@ -1,4 +1,4 @@
 accessing
 allOf: aCollection 
-	type := OAAllOfType new
+	type := JSONAllOfType new
 		schemas: aCollection

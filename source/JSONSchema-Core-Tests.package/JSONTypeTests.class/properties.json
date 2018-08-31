@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "OpenAPITests",
+	"category" : "JSONSchema-Core-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "JSONTypeTests",
+	"type" : "normal"
+}

@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "JSONType",
+	"category" : "JSONSchema-Core-Types",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"schema"
+	],
+	"name" : "JSONTypeArray",
+	"type" : "normal"
+}
