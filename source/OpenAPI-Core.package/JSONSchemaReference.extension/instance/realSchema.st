@@ -1,3 +1,3 @@
-as yet unclassified
+*OpenAPI-Core
 realSchema
 	^ self api resolvePath: path

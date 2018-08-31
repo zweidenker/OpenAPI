@@ -1,14 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "OAVisitor",
-	"category" : "OpenAPI-Core",
+	"super" : "Object",
+	"category" : "JSONSchema-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"object",
-		"call"
+		"schema"
 	],
-	"name" : "OAReadVisitor",
+	"name" : "JSONSchemaVisitor",
 	"type" : "normal"
 }

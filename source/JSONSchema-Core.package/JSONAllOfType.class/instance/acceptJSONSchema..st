@@ -1,3 +1,3 @@
 visiting
-acceptOpenApi: aVisitor 
+acceptJSONSchema: aVisitor 
 	^ aVisitor visitAllOfType: self

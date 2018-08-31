@@ -1,7 +1,7 @@
-visting
-visitSchema: aSchema 
+as yet unclassified
+visitJSONSchema: aSchema 
 	^ JSONSchemaVisitor new
-		visit: aSchema;
+		read: aSchema;
 		schema.
 	"^ aSchema
 		properties: (self visitAll: aSchema properties);

@@ -1,13 +1,13 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "OpenAPI-Core-Model",
+	"category" : "JSONSchema-Core",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
 		"path"
 	],
-	"name" : "OAReference",
+	"name" : "JSONSchemaReference",
 	"type" : "normal"
 }

@@ -3,7 +3,7 @@ valueOrReferenceSchema: valueSchema
 
 	self reader: [ :jsonReader | | map |
 		 jsonReader nextAs: ((jsonReader peekFirstKey = '$ref')
-					ifTrue: [ OAReference ]
+					ifTrue: [ JSONSchemaReference ]
 					ifFalse: [ valueSchema ] ) ].
 	self writer: [ :jsonWriter :map | 
 		jsonWriter nextPut: map ]

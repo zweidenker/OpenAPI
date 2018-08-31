@@ -1,3 +1,3 @@
 as yet unclassified
-acceptOpenApi: aVisitor 
+acceptJSONSchema: aVisitor 
 	^ aVisitor visitTypeObject: self 
