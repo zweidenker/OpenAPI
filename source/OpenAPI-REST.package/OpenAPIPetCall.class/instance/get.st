@@ -1,3 +1,4 @@
 public
 get
-	self initializeParameters
+	self initializeParameters.
+	response := ZnResponse ok: (ZnStringEntity text: 'ok')
