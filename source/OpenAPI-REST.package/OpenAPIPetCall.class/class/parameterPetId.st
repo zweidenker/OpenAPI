@@ -1,5 +1,5 @@
 accessing
-parameterInboundRouteId
+parameterPetId
 	<openApiParameter: #( common )>
 	^ OAParameter new
 		in: #path;
