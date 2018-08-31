@@ -1,0 +1,15 @@
+{
+	"commentStamp" : "",
+	"super" : "TestCase",
+	"category" : "OpenAPI-REST-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"serverDelegate",
+		"server",
+		"client"
+	],
+	"name" : "OARESTTests",
+	"type" : "normal"
+}
