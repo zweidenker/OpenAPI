@@ -1,0 +1,3 @@
+visiting
+visitTypeArray: aTypeArray 
+	^ aTypeArray 
