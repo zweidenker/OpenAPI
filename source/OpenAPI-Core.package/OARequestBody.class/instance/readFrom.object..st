@@ -5,5 +5,7 @@ readFrom: aCall object: object
 	bodyString := aCall request entity string.
 	content keys do: [ :key |
 		 (key asZnMimeType matches: mimeType) ifTrue: [
-			^ (content at: key) read: bodyString object: object ] ].
+			^ (content at: key) 
+				read: (self convert: bodyString from: mimeType)
+				object: object ] ].
 	NotFound signal: 'no matching contentType for ', mimeType asString
