@@ -1,6 +1,7 @@
 as yet unclassified
 visitJSONSchema: aSchema 
-	^ JSONSchemaVisitor new
+	^ JSONSchemaReferenceResolveVisitor new
+		resolver: self;
 		read: aSchema;
 		schema.
 	"^ aSchema
