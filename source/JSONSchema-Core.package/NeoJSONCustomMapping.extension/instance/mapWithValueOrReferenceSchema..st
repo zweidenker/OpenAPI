@@ -1,4 +1,4 @@
-*jsonschema-core
+*JSONSchema-Core
 mapWithValueOrReferenceSchema: valueSchema
 	"Set the reader to a block that will create an instance of the
 	standard mapClass while reading values of type valueSchema,
@@ -8,7 +8,7 @@ mapWithValueOrReferenceSchema: valueSchema
 		map := jsonReader mapClass new.
 		jsonReader parseMapKeysDo: [ :key | | value |
 				value := jsonReader nextAs: ((jsonReader peekFirstKey = '$ref')
-					ifTrue: [ OASchema ]
+					ifTrue: [ JSONSchema ]
 					ifFalse: [ valueSchema ] ).
 				map at: key put: value ].
 		map ].

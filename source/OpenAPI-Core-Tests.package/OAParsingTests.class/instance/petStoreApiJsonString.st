@@ -143,6 +143,7 @@ petStoreApiJsonString
   "components": {
     "schemas": {
       "Pet": {
+        "type" : "object",
         "required": [
           "id",
           "name"
@@ -167,6 +168,7 @@ petStoreApiJsonString
         }
       },
       "Error": {
+        "type" : "object",
         "required": [
           "code",
           "message"

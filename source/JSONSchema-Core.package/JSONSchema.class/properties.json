@@ -8,9 +8,6 @@
 	"instvars" : [
 		"title",
 		"type",
-		"required",
-		"properties",
-		"items",
 		"className",
 		"description"
 	],

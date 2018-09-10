@@ -1,3 +1,3 @@
 accessing
 properties: anObject
-	properties := anObject
+	type properties:  anObject

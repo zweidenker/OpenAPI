@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "JSONTypeErrror",
+	"name" : "JSONSchemaMissingRequiredProperty",
 	"type" : "normal"
 }

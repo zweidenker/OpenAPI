@@ -1,5 +1,5 @@
 tests
 testReadBooleanTypeMismatch
 	self 
-		should: [ JSONTypeBoolean read: 123]
+		should: [ JSONTypeBoolean new read: 123]
 		raise: JSONTypeErrror  

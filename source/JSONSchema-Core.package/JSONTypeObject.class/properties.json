@@ -6,7 +6,9 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"schema"
+		"schema",
+		"properties",
+		"required"
 	],
 	"name" : "JSONTypeObject",
 	"type" : "normal"

@@ -1,3 +1,3 @@
 accessing
 items: aString 
-	items := aString
+	type items: aString

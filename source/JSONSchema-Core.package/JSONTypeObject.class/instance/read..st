@@ -3,7 +3,7 @@ read: jsonObject
 	| object |
 	object := NeoJSONObject new.
 	self 
-		readProperties: schema properties
+		readProperties: properties
 		from: jsonObject
 		writeTo: object.  
 	^ object
