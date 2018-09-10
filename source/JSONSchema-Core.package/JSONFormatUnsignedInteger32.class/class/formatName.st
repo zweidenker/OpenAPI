@@ -1,3 +1,0 @@
-formatting
-formatName
-	^ 'uint32'

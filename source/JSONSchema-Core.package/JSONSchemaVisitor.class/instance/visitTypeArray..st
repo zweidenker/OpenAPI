@@ -1,3 +1,0 @@
-visiting
-visitTypeArray: aTypeArray 
-	^ aTypeArray 

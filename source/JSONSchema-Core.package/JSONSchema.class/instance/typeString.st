@@ -1,3 +1,0 @@
-accessing
-typeString
-	^ type typeName

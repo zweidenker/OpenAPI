@@ -1,3 +1,0 @@
-reading
-readString: aString
-	^ aString
