@@ -2,10 +2,13 @@
 	"commentStamp" : "",
 	"super" : "Object",
 	"category" : "OpenAPI-REST",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"instances"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
+		"id",
 		"name",
 		"age"
 	],

@@ -1,4 +1,8 @@
 public
 get
-	self initializeParameters.
-	response := ZnResponse ok: (ZnStringEntity text: 'ok')
+	response := (Pet instanceWithId: petId)
+		ifNotNil: [:pet | 
+			ZnResponse ok: (ZnEntity 
+				with: (NeoJSONWriter toStringPretty: pet)
+				type: ZnMimeType applicationJson setCharSetUTF8) ]
+		ifNil: [ ZnResponse ok: (ZnStringEntity text: 'ok') ]
