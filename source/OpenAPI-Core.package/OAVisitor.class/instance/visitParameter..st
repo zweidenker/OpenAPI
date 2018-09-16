@@ -1,5 +1,6 @@
 vistiting
 visitParameter: aParameter 
+self halt.
 	^ aParameter 
 		schema: (self visit: aParameter schema);
 		examples: (self visitAll: aParameter examples);

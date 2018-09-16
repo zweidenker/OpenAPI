@@ -1,6 +1,6 @@
 {
 	"commentStamp" : "",
-	"super" : "JSONSchema",
+	"super" : "JSONSchemaSpec",
 	"category" : "OpenAPI-Core-Model",
 	"classinstvars" : [ ],
 	"pools" : [ ],

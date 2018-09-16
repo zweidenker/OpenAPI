@@ -14,7 +14,4 @@ The Header Object follows the structure of the Parameter Object with the followi
 		for: self
 		do: [ :mapping | 
 			mapping mapInstVars: #(description required deprecated allowEmptyValue style explode allowReserved schema example examples content).
-			(mapping mapInstVar: #schema) valueSchema: #SchemaOrReference. ].
-
-	self flag: #question.	"The #SchemaOrReference mapping is used also in OAMediaType and OAParameter classes. Do they (potentially) interfere?"
-	mapper for: #SchemaOrReference customDo: [ :mapping | mapping valueOrReferenceSchema: OASchema. ].
+			(mapping mapInstVar: #schema) valueSchema: OASchema. ]
