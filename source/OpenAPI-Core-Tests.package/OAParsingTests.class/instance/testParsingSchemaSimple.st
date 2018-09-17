@@ -1,5 +1,5 @@
 tests
 testParsingSchemaSimple
-	| schema string |
-	schema := NeoJSONReader fromString: self schemaSimpleString as: OASchema.
-	self assert: schema type class equals: JSONSchemaObject 
+	| schemaDefinition |
+	schemaDefinition := NeoJSONReader fromString: self schemaSimpleString as: OASchema.
+	self assert: schemaDefinition schemaClass equals: JSONSchemaObject 

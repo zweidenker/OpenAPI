@@ -1,5 +1,5 @@
 visting
-visitSchema: aSchema 
+visitSchemaDefinition: aSchema 
 self halt.
 	^ JSONSchemaVisitor new
 		visit: aSchema;
