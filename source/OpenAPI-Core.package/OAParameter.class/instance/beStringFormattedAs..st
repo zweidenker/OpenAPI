@@ -1,4 +1,4 @@
 accessing
 beStringFormattedAs: aString
-	schema := OASchema string
+	schema := JSONSchema string
 		formatString: aString

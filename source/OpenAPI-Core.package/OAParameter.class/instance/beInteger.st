@@ -1,3 +1,3 @@
 accessing
 beInteger
-	schema := OASchema integer
+	schema := JSONSchema integer

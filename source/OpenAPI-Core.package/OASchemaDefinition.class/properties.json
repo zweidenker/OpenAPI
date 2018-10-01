@@ -6,9 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"format",
 		"default"
 	],
-	"name" : "OASchema",
+	"name" : "OASchemaDefinition",
 	"type" : "normal"
 }

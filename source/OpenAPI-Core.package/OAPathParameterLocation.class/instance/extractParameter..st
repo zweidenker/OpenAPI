@@ -5,5 +5,4 @@ extractParameter: aCall
 		(each allButFirst allButLast = self parameterName ) ifTrue: [ 
 			index := idx ] ].
 	value := aCall request uri pathSegments at: index.
-	parameter validate: value.
-	^ value
+	^ parameter read: value.

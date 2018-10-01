@@ -10,7 +10,7 @@ neoJsonMapping: mapper
 		(mapping mapAccessor: #example) valueSchema: OAExample.
 		(mapping mapAccessor: #examples) valueSchema: #OAExamples ].
 	mapper for: #OASchemas customDo: [ :mapping |
-		mapping  mapWithValueSchema: OASchema ].  
+		mapping  mapWithValueSchema: OASchemaDefinition ].  
 	mapper for: #OAExamples customDo: [ :mapping |
 		mapping  mapWithValueSchema: OAExample ].  
 	mapper for: #Parameters customDo: [ :mapping |

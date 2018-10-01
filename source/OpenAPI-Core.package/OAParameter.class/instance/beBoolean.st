@@ -1,3 +1,3 @@
 accessing
 beBoolean
-	schema := OASchema new typeString: 'boolean'
+	schema := JSONSchema boolean

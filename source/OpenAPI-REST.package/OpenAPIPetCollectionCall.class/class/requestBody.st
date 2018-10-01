@@ -4,8 +4,8 @@ requestBody
 	^ OARequestBody new 
 			contentAt: 'application/json' put: (
 				OAMediaTypeObject new
-					schema: (OASchema new
+					schema: (OASchemaDefinition new
 						typeString: 'object';
 						properties: { 
-							#name -> (OASchema string).
-							#age -> (OASchema integer) } asDictionary ))
+							#name -> (JSONSchema string).
+							#age -> (JSONSchema integer) } asDictionary ))

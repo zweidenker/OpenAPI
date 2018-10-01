@@ -6,5 +6,6 @@ testCall
 		url: '/pets/1234';
 		method: #GET;
 		prepareRequest) request.
+	self assert: response isSuccess 
 
 			

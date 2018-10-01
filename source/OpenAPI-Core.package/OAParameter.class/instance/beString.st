@@ -1,3 +1,3 @@
 accessing
 beString
-	schema := OASchema string
+	schema := JSONSchema string

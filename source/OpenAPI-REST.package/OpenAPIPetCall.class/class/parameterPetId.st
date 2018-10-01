@@ -4,5 +4,5 @@ parameterPetId
 	^ OAParameter new
 		in: #path;
 		name: 'petId';
-		beString;
+		beInteger;
 		required: true

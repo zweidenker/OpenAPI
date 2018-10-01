@@ -14,4 +14,4 @@ The Header Object follows the structure of the Parameter Object with the followi
 		for: self
 		do: [ :mapping | 
 			mapping mapInstVars: #(description required deprecated allowEmptyValue style explode allowReserved schema example examples content).
-			(mapping mapInstVar: #schema) valueSchema: OASchema. ]
+			(mapping mapInstVar: #schema) valueSchema: OASchemaDefinition. ]
