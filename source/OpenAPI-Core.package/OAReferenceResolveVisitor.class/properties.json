@@ -6,7 +6,7 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"api"
+		"resolver"
 	],
 	"name" : "OAReferenceResolveVisitor",
 	"type" : "normal"

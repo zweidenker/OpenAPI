@@ -1,3 +1,5 @@
 as yet unclassified
-visitOpenApiSchemaDefinition: anOASchema 
-	^ self visitJSONSchema: anOASchema
+visitOpenApiSchemaDefinition: anOASchemaDefinition 
+	^ anOASchemaDefinition isReference 
+		ifTrue: [ self visit: anOASchemaDefinition reference ]
+		ifFalse: [ self processSchema: anOASchemaDefinition ]

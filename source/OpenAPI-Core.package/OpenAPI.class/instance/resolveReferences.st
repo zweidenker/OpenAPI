@@ -1,5 +1,5 @@
 as yet unclassified
 resolveReferences
 	^ OAReferenceResolveVisitor new 
-		api: self;
+		resolver: self;
 		resolve

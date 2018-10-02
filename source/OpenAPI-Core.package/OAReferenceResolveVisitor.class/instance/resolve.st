@@ -1,3 +1,3 @@
 as yet unclassified
 resolve
-	^ self visit: api
+	^ self visit: resolver

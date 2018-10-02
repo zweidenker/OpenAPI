@@ -1,3 +1,3 @@
 visiting
 visitReference: aReference
-	^ api resolvePath: aReference path
+	^ self visit: (resolver resolveReference: aReference) 
