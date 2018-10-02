@@ -1,7 +1,7 @@
 vistiting
 visitParameter: aParameter 
 	^ aParameter 
-		schema: (self visit: aParameter schema);
+		schema: (self processSchema: aParameter schema);
 		examples: (self visitAll: aParameter examples);
 		content: (self visit: aParameter content);
 		yourself
