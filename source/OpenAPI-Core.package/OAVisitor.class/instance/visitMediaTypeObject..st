@@ -1,5 +1,6 @@
 visiting
 visitMediaTypeObject: aMediaTypeObject 
+
 	^ aMediaTypeObject
-		schema: (self visit: aMediaTypeObject schema);
+		schema: (self processSchema: aMediaTypeObject schema);
 		yourself.
