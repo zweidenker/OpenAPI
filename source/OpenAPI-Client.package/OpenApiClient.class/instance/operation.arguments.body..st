@@ -4,7 +4,7 @@ operation: operation arguments: aCollection body: anObject
 	builder := OARequestBuilder new 
 		baseUri: self baseUri;
 		path: operation path;
-		client: ZnClient new.
+		client: self httpClient.
 		
 	operation 
 		prepareBuilder: builder;
