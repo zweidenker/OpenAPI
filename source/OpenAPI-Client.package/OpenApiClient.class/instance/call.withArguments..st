@@ -1,5 +1,5 @@
 requests
 call: aString withArguments: aCollection
 	^ self 
-		operation: (openApi operationWithId: aString)
-		withArguments: aCollection	
+		operation: (self openApi operationWithId: aString)
+		arguments: aCollection	

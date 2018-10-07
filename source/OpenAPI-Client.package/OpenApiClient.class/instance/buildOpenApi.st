@@ -1,0 +1,3 @@
+accessing
+buildOpenApi
+	self subclassResponsibility 

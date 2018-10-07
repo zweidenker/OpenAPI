@@ -1,3 +1,4 @@
 accessing
 openApi
-	^ openApi
+	^ openApi ifNil: [ 
+		openApi := self buildOpenApi ]

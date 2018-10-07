@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "OpenAPI-Client",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"client",
+		"path",
+		"queryParameters",
+		"pathParameters",
+		"baseUri"
+	],
+	"name" : "OARequestBuilder",
+	"type" : "normal"
+}
