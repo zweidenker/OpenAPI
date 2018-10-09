@@ -1,5 +1,5 @@
 tests
-testCall
+testGetPetCall
 	 
 	| response |
 	response := self delegate handleRequest: (ZnClient new
