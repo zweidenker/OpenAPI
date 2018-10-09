@@ -6,6 +6,6 @@ readFrom: aCall object: object
 	content keys do: [ :key |
 		 (key asZnMimeType matches: mimeType) ifTrue: [
 			^ (content at: key) 
-				read: (self convert: bodyString from: mimeType)
+				read: bodyString
 				object: object ] ].
 	NotFound signal: 'no matching contentType for ', mimeType asString
