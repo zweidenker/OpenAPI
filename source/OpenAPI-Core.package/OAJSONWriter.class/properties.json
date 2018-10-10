@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "NeoJSONWriter",
+	"category" : "OpenAPI-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "OAJSONWriter",
+	"type" : "normal"
+}

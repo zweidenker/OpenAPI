@@ -1,3 +1,0 @@
-accessing
-basePath
-	^ basePath

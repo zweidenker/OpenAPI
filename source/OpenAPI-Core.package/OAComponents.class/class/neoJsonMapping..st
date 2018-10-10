@@ -7,7 +7,7 @@ neoJsonMapping: mapper
 		self flag: #todo.
 		"Response object needs to be done. https://github.com/zweidenker/OpenAPI/issues/3"
 		(mapping mapAccessor: #responses) "valueSchema: #OAResponses".
-		(mapping mapAccessor: #example) valueSchema: OAExample.
+		"(mapping mapAccessor: #example) valueSchema: OAExample."
 		(mapping mapAccessor: #examples) valueSchema: #OAExamples ].
 	mapper for: #OASchemas customDo: [ :mapping |
 		mapping  mapWithValueSchema: OASchemaDefinition ].  
