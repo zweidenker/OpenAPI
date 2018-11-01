@@ -7,7 +7,7 @@ baseline: spec
 			spec
 				package: 'OpenAPI-Core' with: [ spec requires: #('JSONSchema Core' 'NeoJSON'). ];
 				package: 'OpenAPI-Core-Tests' with: [ spec requires: #('OpenAPI-Core' 'JSONSchema Tests' 'Mocketry'). ];
-				package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core', 'Zinc') ];
+				package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core' 'Zinc') ];
 				package: 'OpenAPI-Client' with: [ spec requires: #('OpenAPI-Core') ];
 				project: 'NeoJSON'
 					with: [ spec
