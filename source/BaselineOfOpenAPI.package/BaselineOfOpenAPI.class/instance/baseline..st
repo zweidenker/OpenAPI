@@ -7,14 +7,19 @@ baseline: spec
 			spec
 				package: 'OpenAPI-Core' with: [ spec requires: #('JSONSchema Core' 'NeoJSON'). ];
 				package: 'OpenAPI-Core-Tests' with: [ spec requires: #('OpenAPI-Core' 'JSONSchema Tests' 'Mocketry'). ];
-				package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core') ];
+				package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core', 'Zinc') ];
 				package: 'OpenAPI-Client' with: [ spec requires: #('OpenAPI-Core') ];
 				project: 'NeoJSON'
 					with: [ spec
 						className: #ConfigurationOfNeoJSON;
 						versionString: '17';
-						repository: 'http://mc.stfx.eu/Neo'. ].
-
+						repository: 'http://mc.stfx.eu/Neo'. ];
+					
+				project: 'Zinc'with: [ 
+					spec
+						className: #ConfigurationOfZincHTTPComponents;
+						loads: #('REST');
+						repository: 'http://mc.stfx.eu/ZincHTTPComponents'. ].
 			spec 
 				baseline: 'JSONSchema' with: [ spec repository: 'github://zweidenker/JSONSchema/source' ];
 				project: 'JSONSchema Core' copyFrom: 'JSONSchema' with: [
@@ -29,16 +34,3 @@ baseline: spec
 				group: 'REST' with: #('Core' 'OpenAPI-REST');
 				group: 'Client' with: #('Core' 'OpenAPI-Client');
 				group: 'Tests' with: #('OpenAPI-Core-Tests'). ].
-			
-		spec for: #'pharo6.x' do: [	
-			spec 
-				project: 'Zinc'with: [ 
-					spec
-						className: #ConfigurationOfZincHTTPComponents;
-						versionString: '2.9.4';
-						loads: #('REST');
-						repository: 'http://mc.stfx.eu/ZincHTTPComponents'. ].
-
-			spec
-				package: 'OpenAPI-REST' with: [ 
-					spec requires: #( 'OpenAPI-Core' 'Zinc' ) ] ]
