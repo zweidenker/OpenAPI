@@ -18,6 +18,7 @@ baseline: spec
 				project: 'Zinc'with: [ 
 					spec
 						className: #ConfigurationOfZincHTTPComponents;
+						versionString: #'bleedingEdge';
 						loads: #('REST');
 						repository: 'http://mc.stfx.eu/ZincHTTPComponents'. ].
 			spec 
