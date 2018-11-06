@@ -9,11 +9,7 @@ baseline: spec
 				package: 'OpenAPI-Core-Tests' with: [ spec requires: #('OpenAPI-Core' 'JSONSchema Tests' 'Mocketry'). ];
 				package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core' 'ZincHTTPComponents') ];
 				package: 'OpenAPI-Client' with: [ spec requires: #('OpenAPI-Core') ];
-				project: 'NeoJSON'
-					with: [ spec
-						className: #ConfigurationOfNeoJSON;
-						versionString: '17';
-						repository: 'http://mc.stfx.eu/Neo'. ];
+				baseline: 'NeoJSON' with: [ spec repository: 'github://svenvc/NeoJSON:master/repository' ];
 					
 				baseline: 'ZincHTTPComponents' with: [ 
 				spec 
