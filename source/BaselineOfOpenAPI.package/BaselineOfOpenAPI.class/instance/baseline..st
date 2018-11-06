@@ -15,12 +15,10 @@ baseline: spec
 						versionString: '17';
 						repository: 'http://mc.stfx.eu/Neo'. ];
 					
-				project: 'Zinc'with: [ 
-					spec
-						className: #ConfigurationOfZincHTTPComponents;
-						versionString: #'bleedingEdge';
-						loads: #('REST');
-						repository: 'http://mc.stfx.eu/ZincHTTPComponents'. ].
+				baseline: 'ZincHTTPComponents' with: [ 
+				spec 
+					loads: #('REST');
+					repository: 'github://zweidenker/zinc/repository'].
 			spec 
 				baseline: 'JSONSchema' with: [ spec repository: 'github://zweidenker/JSONSchema/source' ];
 				project: 'JSONSchema Core' copyFrom: 'JSONSchema' with: [
