@@ -7,7 +7,5 @@ handleResponse: aZnResponse
 		at: contentType asString
 		ifPresent: [:mediaObject |
 			^ mediaObject 
-				handleResponse: (self 
-					convert: aZnResponse contents 
-					contentType: contentType) ].
+				handleResponse: aZnResponse contents  ].
 	Error signal: 'cannot find object for media ', contentType asString.

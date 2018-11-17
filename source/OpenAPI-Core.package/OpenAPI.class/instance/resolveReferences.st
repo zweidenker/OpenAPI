@@ -1,5 +1,5 @@
 as yet unclassified
 resolveReferences
 	^ OAReferenceResolveVisitor new 
-		resolver: self;
+		schemaRepository: self;
 		resolve

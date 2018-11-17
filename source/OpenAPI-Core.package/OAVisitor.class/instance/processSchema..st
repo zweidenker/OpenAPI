@@ -1,5 +1,5 @@
 as yet unclassified
 processSchema: anOASchemaDefinition 
 	^ JSONSchemaReferenceResolveVisitor new
-		resolver: self;
+		schemaRepository: self;
 		read: anOASchemaDefinition 

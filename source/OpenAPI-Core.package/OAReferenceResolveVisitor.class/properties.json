@@ -6,7 +6,8 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"resolver"
+		"schemaRepository",
+		"schemasByPath"
 	],
 	"name" : "OAReferenceResolveVisitor",
 	"type" : "normal"
