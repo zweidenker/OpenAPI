@@ -1,9 +1,10 @@
 accessing
 neoJsonMapping: mapper
 	mapper for: self do: [ :mapping |
-		mapping mapAccessors: #( parameters examples requestBodies headers securitySchemes links callbacks ).
+		mapping mapAccessors: #( parameters examples headers securitySchemes links callbacks ).
 		(mapping mapAccessor: #schemas) valueSchema: #OASchemas.
 		(mapping mapInstVar: #parameters) valueSchema: #Parameters.
+		(mapping mapInstVar: #requestBodies) valueSchema: #RequestBodies.
 		self flag: #todo.
 		"Response object needs to be done. https://github.com/zweidenker/OpenAPI/issues/3"
 		(mapping mapAccessor: #responses) "valueSchema: #OAResponses".
@@ -14,4 +15,6 @@ neoJsonMapping: mapper
 	mapper for: #OAExamples customDo: [ :mapping |
 		mapping  mapWithValueSchema: OAExample ].  
 	mapper for: #Parameters customDo: [ :mapping |
-		mapping mapWithValueSchema: OAParameter ]
+		mapping mapWithValueSchema: OAParameter ].
+	mapper for: #RequestBodies customDo: [ :mapping |
+		mapping mapWithValueSchema: OARequestBody  ]
