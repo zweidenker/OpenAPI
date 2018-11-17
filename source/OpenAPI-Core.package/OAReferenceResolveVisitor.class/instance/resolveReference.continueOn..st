@@ -1,7 +1,6 @@
 initialization
 resolveReference: aReference continueOn: aVisitor
 	| schema |
-	self halt.
 	schemasByPath 
 		at: aReference path
 		ifPresent: [ :value | ^ value ].
