@@ -24,7 +24,7 @@ baseline: spec
 				baseline: 'Mocketry' with: [ spec repository: 'github://dionisiydk/Mocketry:v4.0.x'. ].
 
 			spec
-				group: 'default' with: #('Core');
+				group: 'default' with: #('Core' 'REST' 'Client' 'Tests');
 				group: 'Core' with: #('OpenAPI-Core');
 				group: 'REST' with: #('Core' 'OpenAPI-REST');
 				group: 'Client' with: #('Core' 'OpenAPI-Client');
