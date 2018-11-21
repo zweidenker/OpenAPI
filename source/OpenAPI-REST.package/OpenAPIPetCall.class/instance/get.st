@@ -5,4 +5,4 @@ get
 			ZnResponse ok: (ZnEntity 
 				with: (NeoJSONWriter toStringPretty: pet)
 				type: ZnMimeType applicationJson setCharSetUTF8) ]
-		ifNil: [ ZnResponse ok: (ZnStringEntity text: 'ok') ]
+		ifNil: [ ZnResponse notFound: '/pets/', petId asString ]

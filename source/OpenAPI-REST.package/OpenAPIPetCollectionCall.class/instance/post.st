@@ -1,4 +1,5 @@
 public
 post
 	self initializeParameters.
-	response := ZnResponse ok: (ZnStringEntity text: 'ok')
+	Pet instances add: valueDelegate.
+	response := ZnResponse created: '/pets/', valueDelegate id asString
