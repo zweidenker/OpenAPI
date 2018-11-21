@@ -17,7 +17,7 @@ baseline: spec
 					loads: #('REST');
 					repository: 'github://zweidenker/zinc/repository'].
 			spec 
-				baseline: 'JSONSchema' with: [ spec repository: 'github://zweidenker/JSONSchema/source' ];
+				baseline: 'JSONSchema' with: [ spec repository: 'github://zweidenker/JSONSchema:24f0ed6e5b891e7a80baffd3f4f60713ab204ea6/source' ];
 				project: 'JSONSchema Core' copyFrom: 'JSONSchema' with: [
 					spec loads: 'Core'];
 				project: 'JSONSchema Tests' copyFrom: 'JSONSchema' with: [
