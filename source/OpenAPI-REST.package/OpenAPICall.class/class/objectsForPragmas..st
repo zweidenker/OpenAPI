@@ -1,4 +1,4 @@
 as yet unclassified
-parametersForOperation: aSymbol
-	^ ( self pragmasForOperation: aSymbol )
+objectsForPragmas: aCollection
+	^ aCollection
 		collect: [:each | each method valueWithReceiver: self arguments: #() ]

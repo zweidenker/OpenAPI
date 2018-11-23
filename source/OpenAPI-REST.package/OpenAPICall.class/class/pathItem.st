@@ -6,6 +6,6 @@ pathItem
 		(item operationAt: method)
 			summary: self summary;
 			description: self description;
-			parameters: (self parametersForOperation: method);
-			requestBody: (self requestBodyForOperation: method ) ].
+			parameters: (self parametersForMethod: method);
+			requestBody: (self requestBodyForMethod: method ) ].
 	^ item

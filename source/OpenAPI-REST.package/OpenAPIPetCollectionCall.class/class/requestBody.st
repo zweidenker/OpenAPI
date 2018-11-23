@@ -1,9 +1,5 @@
 accessing
-requestBody
-	<openApiRequestBody: #( post )>
-	^ OARequestBody new 
-			contentAt: 'application/json' put: (
-				OAMediaTypeObject new
-					schema: { 
-							#name -> (JSONSchema string).
-							#age -> (JSONSchema integer) } asJSONSchema )
+requestBody 
+	^ super requestBody 
+		description: 'A pet containing name and age';
+		yourself
