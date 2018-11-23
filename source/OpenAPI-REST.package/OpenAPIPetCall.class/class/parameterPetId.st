@@ -2,7 +2,8 @@ accessing
 parameterPetId
 	<openApiParameter: #( common )>
 	^ OAParameter new
-		in: #path;
 		name: 'petId';
+		in: #path;
 		beInteger;
-		required: true
+		required: true;
+		description: 'The internal id of the pet in the pet store'
