@@ -1,0 +1,3 @@
+building
+getDescription
+	^ nil

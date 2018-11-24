@@ -2,7 +2,5 @@ public
 get
 	response := (Pet instanceWithId: petId)
 		ifNotNil: [:pet | 
-			ZnResponse ok: (ZnEntity 
-				with: (NeoJSONWriter toStringPretty: pet)
-				type: ZnMimeType applicationJson setCharSetUTF8) ]
+			self response: pet status: 200 contentType: 'application/json' ]
 		ifNil: [ ZnResponse notFound: '/pets/', petId asString ]

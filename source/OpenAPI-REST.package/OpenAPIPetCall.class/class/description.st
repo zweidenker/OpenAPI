@@ -1,3 +1,3 @@
 accessing
 description 
-	^ 'A pet can be acquired by using the id of the pet to request it. The id needs to be in the path'
+	^ 'If you want to look up some information for pets this is the call to use. '

@@ -1,3 +1,3 @@
 accessing
 summary 
-	^ 'A call to acquire a pet'
+	^ 'This call is about to acquire pet information'

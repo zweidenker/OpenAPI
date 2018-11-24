@@ -1,4 +1,4 @@
 as yet unclassified
 objectsForPragmas: aCollection
-	^ aCollection
+	^ aCollection 
 		collect: [:each | each method valueWithReceiver: self arguments: #() ]

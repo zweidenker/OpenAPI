@@ -1,0 +1,3 @@
+building
+getSummary
+	^ nil
