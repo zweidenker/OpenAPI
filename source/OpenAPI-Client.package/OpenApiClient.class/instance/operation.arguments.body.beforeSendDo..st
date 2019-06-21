@@ -1,6 +1,7 @@
 requests
 operation: operation arguments: aCollection body: anObject beforeSendDo: aBlock
-	|  builder response client |
+	| builder response client responseContent |
+	
 	builder := OARequestBuilder new 
 		baseUri: self baseUri;
 		path: operation path;
@@ -16,4 +17,7 @@ operation: operation arguments: aCollection body: anObject beforeSendDo: aBlock
 	response := client
 		execute;
 		response.
-	^ operation handleResponse: response.
+	responseContent := operation handleResponse: response.
+	^ response isSuccess 
+		ifTrue: [  responseContent ]
+		ifFalse: [ self handleError: responseContent response: response ] 

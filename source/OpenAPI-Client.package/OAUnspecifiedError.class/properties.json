@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Error",
+	"category" : "OpenAPI-Client",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"contents",
+		"response"
+	],
+	"name" : "OAUnspecifiedError",
+	"type" : "normal"
+}

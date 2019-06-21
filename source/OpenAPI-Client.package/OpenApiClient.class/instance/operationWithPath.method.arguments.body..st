@@ -2,7 +2,7 @@ requests
 operationWithPath: aString method: method arguments: aCollection body: anObject
 
 	^ self 
-		operation: ((self openApi operationWithPath: aString) perform: method asSymbol)
+		operation: (self operationWithPath: aString andMethod: method)
 		arguments: aCollection 	
 		body: anObject
 	

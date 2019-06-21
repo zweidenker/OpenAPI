@@ -1,8 +1,11 @@
 as yet unclassified
-handleResponse: aZnResponse 
+handleResponse: aResponse 
 	responses ifNil: [ 
-		 ^  aZnResponse contents].
+		^ OAUnspecifiedResponse new
+			response: aResponse ].
 	^ responses 
-		at: aZnResponse status asString
-		ifPresent: [ :response |  response handleResponse: aZnResponse ]
-		ifAbsent: [ aZnResponse contents ].
+		at: aResponse status asString
+		ifPresent: [ :response |  response handleResponse: aResponse ]
+		ifAbsent: [ 
+			OAUnspecifiedResponse new
+				response: aResponse ].
