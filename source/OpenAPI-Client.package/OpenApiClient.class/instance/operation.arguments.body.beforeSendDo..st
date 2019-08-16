@@ -20,4 +20,4 @@ operation: operation arguments: aCollection body: anObject beforeSendDo: aBlock
 	responseContent := operation handleResponse: response.
 	^ response isSuccess 
 		ifTrue: [  responseContent ]
-		ifFalse: [ self handleError: responseContent response: response ] 
+		ifFalse: [ self handleError: responseContent request: client request response: response ] 

@@ -1,3 +1,3 @@
 as yet unclassified
 handleResponse: aString 
-	^ schema read: aString
+	^ schema readString: aString
