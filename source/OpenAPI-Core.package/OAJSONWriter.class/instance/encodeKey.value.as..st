@@ -1,7 +1,7 @@
 private
 encodeKey: key value: value as: valueSchema
 	super
-		encodeKey: key 
+		encodeKey: key asString
 		value: value 
 		as: ((value isKindOf: JSONSchema) 
 			ifTrue: [ value class ]
