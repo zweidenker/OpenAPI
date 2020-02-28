@@ -7,5 +7,11 @@ writeParameterValueOn: anObject request: request
 	value := self extractParameter: request. 
 	value ifNil: [ ^ self ].
 	self shouldUseAccessors 
-		ifTrue: [ anObject perform: name asSymbol asMutator with: value ]
-		ifFalse: [ anObject instVarNamed: name put: value ]
+		ifTrue: [ 
+			anObject 
+				perform: name asValidSelector asMutator 
+				with: value ]
+		ifFalse: [ 
+			anObject 
+				instVarNamed: name asValidSelector 
+				put: value ]

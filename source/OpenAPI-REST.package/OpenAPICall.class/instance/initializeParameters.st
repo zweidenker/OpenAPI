@@ -2,5 +2,5 @@ initialization
 initializeParameters
 
 	self operation 
-		initializeValuesOn: self valueDelegate
+		initializeValuesOn: self
 		fromRequest: self

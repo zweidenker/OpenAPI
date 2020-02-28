@@ -1,0 +1,3 @@
+accessing
+bodyValueDelegate
+	^ self valueDelegate
