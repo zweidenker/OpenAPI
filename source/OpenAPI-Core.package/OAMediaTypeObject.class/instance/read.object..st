@@ -1,5 +1,5 @@
-reading
+as yet unclassified
 read: value object: object
-	^ [ schema read: value object: object ]
-		on: JSONSchemaError 
-		do: [ :error | OAInvalidFormat signal: error messageText ]
+	^ [schema read: value object: object] on: JSONSchemaError do: [ :ex |
+			OAInvalidFormat signal: ex description
+		 ]
