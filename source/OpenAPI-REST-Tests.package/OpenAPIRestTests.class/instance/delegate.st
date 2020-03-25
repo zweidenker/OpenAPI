@@ -3,4 +3,4 @@ delegate
 
 	^ (ZnRestServerDelegate new
 			uriSpace: (OpenAPIUriSpace new
-				rootClass: OpenAPIBasePetCall ))
+				rootClass: self rootCallClass ))

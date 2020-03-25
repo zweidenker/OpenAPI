@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "TestCase",
+	"super" : "OpenAPIRestTests",
 	"category" : "OpenAPI-REST-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "OpenAPIRestTest",
+	"name" : "OpenAPIRestPetTests",
 	"type" : "normal"
 }

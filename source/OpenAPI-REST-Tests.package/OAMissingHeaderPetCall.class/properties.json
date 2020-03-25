@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "OpenAPITestCall",
+	"category" : "OpenAPI-REST-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"requiredPetId"
+	],
+	"name" : "OAMissingHeaderPetCall",
+	"type" : "normal"
+}
