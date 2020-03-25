@@ -1,15 +1,13 @@
 {
 	"commentStamp" : "",
-	"super" : "TestCase",
+	"super" : "OpenAPIBasePetCall",
 	"category" : "OpenAPI-REST-Tests",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
-		"serverDelegate",
-		"server",
-		"client"
+		"petId"
 	],
-	"name" : "OARESTTests",
+	"name" : "OpenAPIPetCall",
 	"type" : "normal"
 }
