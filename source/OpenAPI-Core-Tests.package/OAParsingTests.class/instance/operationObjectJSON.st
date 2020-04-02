@@ -19,7 +19,7 @@ operationObjectJSON
 	{
       "name": "secondId",
       "in": "query",
-      "description": "just an ID to have more than one",
+      "description": "an ID to have more than one",
       "schema": {
         "type": "string"
       }
