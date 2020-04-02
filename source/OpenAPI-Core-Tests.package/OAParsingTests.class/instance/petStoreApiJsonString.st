@@ -113,7 +113,15 @@ petStoreApiJsonString
             "schema": {
               "type": "string"
             }
-          }
+          },
+			{
+      			"name": "secondId",
+      			"in": "query",
+      			"description": "just an ID to have more than one",
+      			"schema": {
+        		"type": "string"
+      		}
+    }
         ],
         "responses": {
           "200": {
