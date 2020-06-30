@@ -15,7 +15,7 @@ baseline: spec
 				baseline: 'ZincHTTPComponents' with: [ 
 				spec 
 					loads: #('REST');
-					repository: 'github://zweidenker/zinc/repository'].
+					repository: 'github://svenvc/zinc/repository'].
 			spec 
 				baseline: 'JSONSchema' with: [ spec repository: 'github://zweidenker/JSONSchema/source' ];
 				project: 'JSONSchema Core' copyFrom: 'JSONSchema' with: [
