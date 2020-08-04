@@ -1,5 +1,5 @@
 tests
-testParsingOpenAPIWithMinEnum
+testParsingOpenAPIWithEnum
 	| api path |
 	api := OpenAPI fromString: self petStoreApiJsonStringWithEnum.
 	self assert: api info title equals: 'Swagger Petstore'.
