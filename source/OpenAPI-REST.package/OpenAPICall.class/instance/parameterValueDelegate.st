@@ -1,0 +1,3 @@
+accessing
+parameterValueDelegate
+	^ self valueDelegate

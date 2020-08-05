@@ -1,4 +1,4 @@
-as yet unclassified
+reading
 extractParameter: aCall
 	| index value |
 	($/ split: aCall class path allButFirst) withIndexDo: [ :each :idx |

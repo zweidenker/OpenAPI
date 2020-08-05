@@ -15,6 +15,14 @@ operationObjectJSON
       "schema": {
         "type": "string"
       }
+    },
+	{
+      "name": "secondId",
+      "in": "query",
+      "description": "an ID to have more than one",
+      "schema": {
+        "type": "string"
+      }
     }
   ],
   "requestBody": {
