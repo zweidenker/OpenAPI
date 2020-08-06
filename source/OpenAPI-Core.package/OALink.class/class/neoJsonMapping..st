@@ -1,3 +1,3 @@
 accessing
 neoJsonMapping: mapper
-	mapper for: self do: [ :mapping | ]	
+	mapper for: self do: [ :mapping | ].

@@ -1,3 +1,3 @@
 *OpenAPI-Core
 acceptOpenApi: aVisitor 
-	^ self
+	^ self 
