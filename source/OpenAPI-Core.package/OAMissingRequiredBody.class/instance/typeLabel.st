@@ -1,3 +1,3 @@
 accessing
 typeLabel
-	^ 'ContraintsError'
+	^ 'MissingBody'
