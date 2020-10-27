@@ -6,7 +6,7 @@ extractParameter: aCall
 		 ].
 	value isNil
 		ifTrue: [ required
-				ifTrue: [ OAMissingRequiredParameter signal: 'parameter ' , name , ' is required but not present' ]
+				ifTrue: [ (OAMissingRequiredParameter parameter: name) signal ]
 				ifFalse: [ ^ value ] ].
 	self validateContraints: value.
 	^ value

@@ -5,7 +5,9 @@
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [ ],
+	"instvars" : [
+		"parameter"
+	],
 	"name" : "OAMissingRequiredParameter",
 	"type" : "normal"
 }

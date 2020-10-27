@@ -7,6 +7,6 @@ execute
 			self perform: self method.
 			self postProcess. 
 			response]
-				on: OAError 
+				on: self errorClasses
 				do: [ :err | self handleError: err ] ] 
 		ifFalse: [ self delegate wrongMethod: request ]  
