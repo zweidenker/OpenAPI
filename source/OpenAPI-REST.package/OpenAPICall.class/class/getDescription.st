@@ -1,3 +1,0 @@
-building
-getDescription
-	^ nil

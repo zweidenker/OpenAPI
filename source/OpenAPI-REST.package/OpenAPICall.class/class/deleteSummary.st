@@ -1,3 +1,0 @@
-building
-deleteSummary
-	^ nil

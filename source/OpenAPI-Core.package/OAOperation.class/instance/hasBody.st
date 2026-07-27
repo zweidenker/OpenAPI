@@ -1,3 +1,0 @@
-testing
-hasBody
-	^ requestBody notNil

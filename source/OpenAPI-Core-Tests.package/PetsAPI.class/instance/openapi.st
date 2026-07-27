@@ -1,3 +1,0 @@
-accessing
-openapi 
-	^ '3.0.2'

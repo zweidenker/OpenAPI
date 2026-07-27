@@ -1,3 +1,0 @@
-accessing
-requestBody
-	^ OARequestBody new

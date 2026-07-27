@@ -1,3 +1,0 @@
-accessing
-pathItem
-	^ self buildPathItem 

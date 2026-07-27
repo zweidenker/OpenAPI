@@ -1,3 +1,0 @@
-accessing
-newPathItem
-	^ OAPathItem new

@@ -1,3 +1,0 @@
-visiting
-visitReference: aReference 
-	^ aReference 

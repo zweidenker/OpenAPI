@@ -1,3 +1,0 @@
-building
-headDescription
-	^ nil
