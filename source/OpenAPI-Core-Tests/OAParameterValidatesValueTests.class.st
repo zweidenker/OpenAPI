@@ -8,10 +8,10 @@ Class {
 
 { #category : 'tests' }
 OAParameterValidatesValueTests >> testByDelegatingToSchema [
-	| schema sud |
-	schema := Mock named: #schema.
+	| sud |
 	sud := OAParameter new
-		schema: schema;
+		schema: JSONSchema integer;
 		yourself.
-	(sud validate: #value) should strictly satisfy: [ schema validate: #value. ].
+	self shouldnt: [ sud validate: 5 ] raise: Error.
+	self should: [ sud validate: 'notAnInteger' ] raise: JSONSchemaError
 ]
