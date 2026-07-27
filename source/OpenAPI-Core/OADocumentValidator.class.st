@@ -13,23 +13,8 @@ OADocumentValidator class >> isValidDocument: aDocument [
 
 { #category : 'schemas' }
 OADocumentValidator class >> schemaForVersion: aVersionString [
-	"Baut ein JSONSchema aus dem gebündelten OAI-Meta-Schema für aVersionString. INTERIM: strippt format (siehe #stripFormatsIn:)."
-	| root |
-	root := NeoJSONReader fromString: (OAMetaSchema schemaJsonForVersion: aVersionString).
-	self stripFormatsIn: root.
-	^ JSONSchema fromString: (NeoJSONWriter toString: root)
-]
-
-{ #category : 'private' }
-OADocumentValidator class >> stripFormatsIn: anObject [
-	"INTERIM: entfernt alle format-Keys, bis JSONSchema unbekannte Formate toleriert (siehe OpenAPI roadmap + Task task_7b802120). Danach ersatzlos entfernen, damit Format-Annotationen erhalten bleiben."
-	anObject isDictionary
-		ifTrue: [
-			anObject removeKey: 'format' ifAbsent: [ ].
-			anObject valuesDo: [ :v | self stripFormatsIn: v ] ]
-		ifFalse: [
-			(anObject isCollection and: [ anObject isString not ])
-				ifTrue: [ anObject do: [ :v | self stripFormatsIn: v ] ] ]
+	"Baut ein JSONSchema aus dem gebündelten OAI-Meta-Schema für aVersionString."
+	^ JSONSchema fromString: (OAMetaSchema schemaJsonForVersion: aVersionString)
 ]
 
 { #category : 'validating' }
