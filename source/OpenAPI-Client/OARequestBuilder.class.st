@@ -12,6 +12,11 @@ Class {
 	#package : 'OpenAPI-Client'
 }
 
+{ #category : 'building' }
+OARequestBuilder >> addFormBody: aDictionary [
+	client entity: (ZnApplicationFormUrlEncodedEntity withAll: (self flattenFormParameters: aDictionary))
+]
+
 { #category : 'as yet unclassified' }
 OARequestBuilder >> addJSONBody: aDictionary [ 
 	client 
@@ -56,6 +61,38 @@ OARequestBuilder >> buildClient [
 { #category : 'accessing' }
 OARequestBuilder >> client: aClient [ 
 	client := aClient
+]
+
+{ #category : 'forms' }
+OARequestBuilder >> flattenFormParameters: aDictionary [
+	| result |
+	result := Dictionary new.
+	self flattenFormParameters: aDictionary prefix: nil into: result.
+	^ result
+]
+
+{ #category : 'forms' }
+OARequestBuilder >> flattenFormParameters: anObject prefix: aPrefixString into: aDictionary [
+	anObject isString ifTrue: [ 
+		aDictionary at: aPrefixString put: anObject.
+		^ self ].
+	(anObject isKindOf: Dictionary) ifTrue: [ 
+		anObject keysAndValuesDo: [ :k :v |
+			self 
+				flattenFormParameters: v 
+				prefix: (aPrefixString 
+					ifNil: [ k asString ] 
+					ifNotNil: [ aPrefixString , (String with: $[) , k asString , (String with: $]) ])
+				into: aDictionary ].
+		^ self ].
+	(anObject isKindOf: SequenceableCollection) ifTrue: [ 
+		anObject doWithIndex: [ :v :i |
+			self 
+				flattenFormParameters: v 
+				prefix: (aPrefixString , (String with: $[) , (i - 1) asString , (String with: $]))
+				into: aDictionary ].
+		^ self ].
+	aDictionary at: aPrefixString put: anObject asString
 ]
 
 { #category : 'initialization' }
