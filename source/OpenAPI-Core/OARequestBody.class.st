@@ -76,6 +76,14 @@ OARequestBody >> initialize [
 	required := false
 ]
 
+{ #category : 'accessing' }
+OARequestBody >> preferredContentType [
+	content ifNil: [ ^ nil ].
+	(content includesKey: 'application/x-www-form-urlencoded') ifTrue: [ ^ 'application/x-www-form-urlencoded' ].
+	(content includesKey: 'application/json') ifTrue: [ ^ 'application/json' ].
+	^ content keys anyOne
+]
+
 { #category : 'instance creation' }
 OARequestBody >> readFrom: aCall object: object [
 	| mimeType bodyString |

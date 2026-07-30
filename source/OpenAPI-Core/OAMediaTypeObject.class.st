@@ -39,6 +39,11 @@ OAMediaTypeObject >> encoding [
 	^ encoding
 ]
 
+{ #category : 'accessing' }
+OAMediaTypeObject >> encoding: aDictionary [
+	encoding := aDictionary
+]
+
 { #category : 'as yet unclassified' }
 OAMediaTypeObject >> example [
 	^ example
@@ -107,4 +112,11 @@ OAMediaTypeObject >> writeBody: aDictionary builder: builder [
 		ifTrue: [ aDictionary ]
 		ifFalse: [ schema readObject: aDictionary ])
 
+]
+
+{ #category : 'as yet unclassified' }
+OAMediaTypeObject >> writeFormBody: aDictionary builder: builder [
+	builder addFormBody: (schema isAnyObject
+		ifTrue: [ aDictionary ]
+		ifFalse: [ schema readObject: aDictionary ])
 ]
