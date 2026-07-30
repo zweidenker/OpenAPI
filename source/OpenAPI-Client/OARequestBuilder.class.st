@@ -76,7 +76,7 @@ OARequestBuilder >> flattenFormParameters: anObject prefix: aPrefixString into: 
 	anObject isString ifTrue: [ 
 		aDictionary at: aPrefixString put: anObject.
 		^ self ].
-	(anObject isKindOf: Dictionary) ifTrue: [ 
+	((anObject isKindOf: Dictionary) or: [ anObject isKindOf: OrderedDictionary ]) ifTrue: [ 
 		anObject keysAndValuesDo: [ :k :v |
 			self 
 				flattenFormParameters: v 
