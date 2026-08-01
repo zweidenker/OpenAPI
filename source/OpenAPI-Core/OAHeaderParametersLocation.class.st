@@ -17,5 +17,7 @@ OAHeaderParametersLocation >> write: key value: value to: builder [
 	copyFrom:to: dispatches here for any 'in: #header' parameter, and crashed with
 	#doesNotUnderstand: #write:value:to: for every client request using a header
 	parameter (e.g. an API key sent via a custom header)."
-	builder addHeaderParameter: key value: value
+	| pairs |
+	pairs := self serializePairsFor: value name: key defaultStyle: 'simple'.
+	builder addHeaderParameter: key value: pairs first value
 ]
