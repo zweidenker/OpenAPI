@@ -18,6 +18,8 @@ OAPathParameterLocation >> extractParameter: aCall [
 ]
 
 { #category : 'writing' }
-OAPathParameterLocation >> write: key value: value to: builder [ 
-	builder addPathParameter: key value: value
+OAPathParameterLocation >> write: key value: value to: builder [
+	| pairs |
+	pairs := self serializePairsFor: value name: key defaultStyle: 'simple'.
+	builder addPathParameter: key value: pairs first value
 ]

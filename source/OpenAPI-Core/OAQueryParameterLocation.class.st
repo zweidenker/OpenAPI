@@ -24,6 +24,7 @@ OAQueryParameterLocation >> extractParameter: aCall [
 ]
 
 { #category : 'as yet unclassified' }
-OAQueryParameterLocation >> write: key value: value to: builder [ 
-	builder addQueryParameter: key value: value
+OAQueryParameterLocation >> write: key value: value to: builder [
+	(self serializePairsFor: value name: key defaultStyle: 'form') do: [ :pair |
+		builder addQueryParameter: pair key value: pair value ]
 ]
