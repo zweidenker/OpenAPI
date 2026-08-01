@@ -114,16 +114,23 @@ OAMediaTypeObject >> write: anObject [
 ]
 
 { #category : 'as yet unclassified' }
-OAMediaTypeObject >> writeBody: aDictionary builder: builder [ 
-	builder addJSONBody: (schema isAnyObject 
-		ifTrue: [ aDictionary ]
-		ifFalse: [ schema readObject: aDictionary ])
+OAMediaTypeObject >> writeBody: aDictionary builder: builder [
+	"#isAnyObject is only implemented on JSONSchemaObject - any non-object body
+	schema (bare string/array, or an allOf-composed schema which resolves to
+	JSONSchemaAnyObject since nothing sets schemaClass for a bare allOf) used to
+	crash here with #doesNotUnderstand: #isAnyObject. Such schemas degrade to a
+	plain passthrough, same as the JSONSchemaObject-with-no-properties case."
+	builder addJSONBody: (((schema isKindOf: JSONSchemaObject) and: [ schema isAnyObject not ])
+		ifTrue: [ schema readObject: aDictionary ]
+		ifFalse: [ aDictionary ])
 
 ]
 
 { #category : 'as yet unclassified' }
 OAMediaTypeObject >> writeFormBody: aDictionary builder: builder [
-	builder addFormBody: (schema isAnyObject
-		ifTrue: [ aDictionary ]
-		ifFalse: [ schema readObject: aDictionary ])
+	"See #writeBody:builder: for why this checks (schema isKindOf: JSONSchemaObject)
+	instead of unconditionally sending #isAnyObject."
+	builder addFormBody: (((schema isKindOf: JSONSchemaObject) and: [ schema isAnyObject not ])
+		ifTrue: [ schema readObject: aDictionary ]
+		ifFalse: [ aDictionary ])
 ]

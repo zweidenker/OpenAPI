@@ -29,3 +29,12 @@ OpenAPIRestTests >> runCase [
 		value: self
 		during: [ super runCase ]
 ]
+
+{ #category : 'running' }
+OpenAPIRestTests >> setUp [
+	"Pet instances accumulates in a class-side IdentitySet with no cleanup - across
+	repeated test runs within the same image this grows without bound. Reset it
+	before each test so tests stay isolated from each other."
+	super setUp.
+	Pet resetInstances
+]
