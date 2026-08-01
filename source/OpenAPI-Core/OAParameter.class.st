@@ -300,11 +300,9 @@ OAParameter >> validateContraints: value [
 
 { #category : 'writing' }
 OAParameter >> writeParameterValueOn: anObject request: request [
+	"required/nicht-required ist bereits durch #extractParameter: abgedeckt: signalisiert OAMissingRequiredParameter, wenn required und fehlend; liefert nil nur, wenn optional und fehlend - dann wird hier bewusst nichts geschrieben."
 	| value |
-	self flag: #todo.
-	"needs to be improved for required or not. If not required we don't write the
-	value. Needs to be checked if that constraint is ok"
-	value := self extractParameter: request. 
+	value := self extractParameter: request.
 	value ifNil: [ ^ self ].
 	self shouldUseAccessors 
 		ifTrue: [ 
