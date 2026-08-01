@@ -31,6 +31,12 @@ OADocumentValidatorTests >> testMissingPathsIsInvalid [
 ]
 
 { #category : 'tests' }
+OADocumentValidatorTests >> testSchemaForVersionIsCachedAcrossPatchVersions [
+	OADocumentValidator resetSchemaCache.
+	self assert: (OADocumentValidator schemaForVersion: '3.0.0') == (OADocumentValidator schemaForVersion: '3.0.3')
+]
+
+{ #category : 'tests' }
 OADocumentValidatorTests >> testValidMinimalDocumentIsValid [
 	self assert: (OADocumentValidator isValidDocument: self validMinimalDocument)
 ]
@@ -41,6 +47,33 @@ OADocumentValidatorTests >> testValidateReturnsParsedDocument [
 	doc := OADocumentValidator validateDocument: self validMinimalDocument.
 	self assert: (doc at: 'openapi') equals: '3.0.0'.
 	self assert: ((doc at: 'info') at: 'title') equals: 'Test API'
+]
+
+{ #category : 'tests' }
+OADocumentValidatorTests >> testValidationErrorForBadPathsTypeIsJSONSchemaError [
+	| error |
+	error := OADocumentValidator validationErrorFor: '{"openapi":"3.0.0","info":{"title":"t","version":"1"},"paths":"nope"}'.
+	self assert: (error isKindOf: JSONSchemaError)
+]
+
+{ #category : 'tests' }
+OADocumentValidatorTests >> testValidationErrorForValidDocumentIsNil [
+	self assert: (OADocumentValidator validationErrorFor: self validMinimalDocument) isNil
+]
+
+{ #category : 'tests' }
+OADocumentValidatorTests >> testValidationErrorMessageForBadPathsTypeDescribesFailure [
+	| message |
+	message := OADocumentValidator validationErrorMessageFor: '{"openapi":"3.0.0","info":{"title":"t","version":"1"},"paths":"nope"}'.
+	self assert: (message includesSubstring: 'JSONTypeError').
+	self assert: (message includesSubstring: 'not an object')
+]
+
+{ #category : 'tests' }
+OADocumentValidatorTests >> testValidationErrorMessageForMissingInfoDescribesFailure [
+	| message |
+	message := OADocumentValidator validationErrorMessageFor: '{"openapi":"3.0.0","paths":{}}'.
+	self assert: (message includesSubstring: 'JSONSchemaMissingRequiredProperty')
 ]
 
 { #category : 'fixtures' }
