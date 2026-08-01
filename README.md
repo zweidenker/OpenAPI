@@ -1,3 +1,3 @@
 # OpenAPI
 
-[![Build Status](https://travis-ci.org/zweidenker/OpenAPI.svg?branch=master)](https://travis-ci.org/zweidenker/OpenAPI)
+[![Build Status](https://github.com/zweidenker/OpenAPI/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/zweidenker/OpenAPI/actions/workflows/build.yml)

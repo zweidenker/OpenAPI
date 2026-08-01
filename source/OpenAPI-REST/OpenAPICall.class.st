@@ -80,7 +80,12 @@ OpenAPICall class >> implementedMethods [
 
 { #category : 'testing' }
 OpenAPICall class >> isAbstract [
-	^ self = OpenAPICall 
+	"Structural check instead of a literal-class comparison: a class is abstract for
+	URI-space/path-building purposes if it does not (itself or via inheritance) answer a
+	concrete #path - the one thing every real endpoint must define. Catches
+	user-defined intermediate base classes (e.g. OpenAPIBasePetCall), not just the
+	literal OpenAPICall root, which the previous 'self = OpenAPICall' check missed."
+	^ (self respondsTo: #path) not
 ]
 
 { #category : 'testing' }
