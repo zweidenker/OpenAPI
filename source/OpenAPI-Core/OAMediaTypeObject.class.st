@@ -18,10 +18,12 @@ OAMediaTypeObject class >> neoJsonMapping: mapper [
 	mapper for: self do: [ :mapping |
 		mapping mapAccessors: #( encoding ).
 		(mapping mapAccessor: #schema) valueSchema: OASchemaDefinition.
-		(mapping mapAccessor: #example) valueSchema: OAExample.
+		"example (unlike a named entry in #examples) is a raw, arbitrary value per spec - not an
+		Example Object - so no valueSchema: it maps straight through as JSON data."
+		mapping mapAccessor: #example.
 		(mapping mapAccessor: #examples) valueSchema: #OAExamples ].
 	mapper for: #OAExamples customDo: [ :mapping |
-		mapping  mapWithValueSchema: OAExample ]	
+		mapping  mapWithValueSchema: OAExample ]
 ]
 
 { #category : 'visting' }
@@ -47,6 +49,11 @@ OAMediaTypeObject >> encoding: aDictionary [
 { #category : 'as yet unclassified' }
 OAMediaTypeObject >> example [
 	^ example
+]
+
+{ #category : 'accessing' }
+OAMediaTypeObject >> example: anObject [
+	example := anObject
 ]
 
 { #category : 'as yet unclassified' }
