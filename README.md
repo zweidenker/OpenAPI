@@ -2,13 +2,13 @@
 
 [![Build Status](https://github.com/zweidenker/OpenAPI/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/zweidenker/OpenAPI/actions/workflows/build.yml)
 
-This is an implementation of the [OpenAPI 3.0](https://spec.openapis.org/oas/v3.0.4.html) specification for the [Pharo](http://pharo.org) language. It models an OpenAPI document as an object tree, validates whole documents against the official OAI meta-schema, and can drive an HTTP client from a loaded document. It builds on [JSONSchema](https://github.com/zweidenker/JSONSchema) for schema parsing and validation.
+This is an implementation of the [OpenAPI 3.0](https://spec.openapis.org/oas/v3.0.4.html) specification for the [Pharo](http://pharo.org) language. It models an OpenAPI document as an object tree, validates whole documents against the official OAI meta-schema, can drive an HTTP client from a loaded document, and can serve one — generating the document straight from the server's own request-handling classes. It builds on [JSONSchema](https://github.com/zweidenker/JSONSchema) for schema parsing and validation.
 
 The framework is split into three packages:
 
 - **`OpenAPI-Core`** — the document object model (`OpenAPI`, `OAInfo`, `OAPathItem`, `OAOperation`, `OAParameter`, `OASchemaDefinition`, …), parsing/serialization, and `OADocumentValidator` for validating a document against the spec.
 - **`OpenAPI-Client`** — builds and fires HTTP requests from a loaded document (`OpenApiClient`, `OARequestBuilder`), including the full OAI parameter style/explode matrix.
-- **`OpenAPI-REST`** — a server-side routing layer on top of Zinc (`OpenAPICall`, `OpenAPIUriSpace`). This package is effectively unmaintained legacy code (see [What is (not yet) supported](#what-is-not-yet-supported)) — new work should not depend on it.
+- **`OpenAPI-REST`** — the server-side counterpart: routes incoming requests to your handler classes on top of Zinc (`OpenAPICall`, `OpenAPIUriSpace`), and can generate the OpenAPI document those handlers implement directly from their pragma-annotated definitions.
 
 ## Contents
 
@@ -18,6 +18,7 @@ The framework is split into three packages:
 - [Validating documents](#validating-documents)
 - [Building requests with OpenAPI-Client](#building-requests-with-openapi-client)
 - [Parameter locations and styles](#parameter-locations-and-styles)
+- [Building a server with OpenAPI-REST](#building-a-server-with-openapi-rest)
 - [What is (not yet) supported](#what-is-not-yet-supported)
 
 ## Installation
@@ -101,6 +102,48 @@ All four parameter locations and the full OAI style/explode matrix are supported
 
 `deepObject` and `form`+`explode:true` on an object both expand into multiple top-level parameters (one per property) rather than a single value, per spec. Cookies are a documented special case: the spec leaves `form`+`explode:true` on a non-primitive value undefined for cookies (you can't repeat a cookie name the way you repeat a query key), so arrays/objects are comma-joined into the single cookie value instead.
 
+## Building a server with OpenAPI-REST
+
+Define your API as a hierarchy of `OpenAPICall` subclasses — one per resource path, each implementing the HTTP verbs it supports. Class-side, pragma-annotated methods describe parameters/request bodies/responses for spec generation, alongside the actual request-handling method:
+
+```smalltalk
+MyPetCall class >> path [
+  ^ '/pets/{petId}'
+]
+
+MyPetCall class >> parameterPetId [
+  <openApiParameter: #(common)>
+  ^ OAParameter new name: 'petId'; in: #path; beInteger; required: true
+]
+
+MyPetCall class >> responseOk [
+  <openApiResponse: #(get) status: #(200) contentType: #('application/json')>
+  ^ OAMediaTypeObject new schema: { #name -> JSONSchema string } asJSONSchema
+]
+
+MyPetCall >> get [
+  response := self response: aPet status: 200 contentType: 'application/json'
+]
+```
+
+Give your call classes a shared, otherwise-empty superclass (it must not declare its own `path`) as the root of the hierarchy, then route requests to it with `OpenAPIUriSpace` and Zinc's REST server delegate:
+
+```smalltalk
+delegate := ZnRestServerDelegate new uriSpace: (OpenAPIUriSpace new rootClass: MyBaseCall).
+server := ZnServer startDefaultOn: 8080.
+server delegate: delegate.
+```
+
+Get the OpenAPI document your server actually implements — generated straight from the call hierarchy, not maintained by hand — by subclassing `OpenAPI` and pointing `rootCallClass` at the same root:
+
+```smalltalk
+MyAPI class >> rootCallClass [
+  ^ MyBaseCall
+]
+
+MyAPI new specString.   "-> the generated OpenAPI 3.0 document"
+```
+
 ## What is (not yet) supported
 
 This targets **OpenAPI 3.0** specifically — not a full implementation of every version or every edge case. Known gaps:
@@ -108,7 +151,6 @@ This targets **OpenAPI 3.0** specifically — not a full implementation of every
 - **3.1 / 3.2 are not supported**, and this is a deliberate decision, not an oversight: their dialect is JSON Schema 2020-12 + the OAS vocabulary, which needs `$dynamicRef`/`$dynamicAnchor` resolution, `$ref`-sibling composition and `unevaluated*` applicators — machinery JSONSchema-Core doesn't have yet. A 3.1 meta-schema builds but degrades to accepting anything, since it can't yet enforce the 2020-12 keywords.
 - **`allOf` composition of object schemas** (the common "extends" pattern, e.g. `Pet = allOf[NewPet, {id}]`) merges properties/required/additionalProperties for reading. A mixed/primitive `allOf` (not every branch object-shaped) has no sensible single merge target and stays a raw passthrough.
 - **A schema derived purely from `allOf`** (no explicit `type` keyword of its own) can't re-serialize its `type` keyword through `specString` — a real gap, not silently wrong: it raises rather than guessing.
-- **`OpenAPI-REST`** (server-side routing) is effectively unmaintained legacy code: excluding test-infrastructure changes, the entire package has had exactly one commit (the initial import) in the repository's history.
 - Only **local `$ref`s** are resolved (inherited from JSONSchema-Core — no remote/external reference fetching).
 
 If you need something that is missing you are welcome to open a pull request, or a ticket in this repository.
