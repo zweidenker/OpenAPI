@@ -60,27 +60,6 @@ OAResponse >> contentAtType: aString put: aMediaTypeObject [
 	content at: aString put: aMediaTypeObject 
 ]
 
-{ #category : 'as yet unclassified' }
-OAResponse >> convert: aString contentType: aMimeType [ 
-	| methodName |
-	methodName := 'convert', aMimeType main capitalized, aMimeType sub capitalized.
-	^ self 
-		perform: methodName asSymbol asMutator 
-		with: aString
-]
-
-{ #category : 'as yet unclassified' }
-OAResponse >> convertApplicationJson: aString [ 
-	^ (NeoJSONReader on: aString readStream)
-			mapClass: NeoJSONObject;
-			next
-]
-
-{ #category : 'as yet unclassified' }
-OAResponse >> convertTextPlain: aString [ 
-	^ aString
-]
-
 { #category : 'accessing' }
 OAResponse >> description [
 	^ description.

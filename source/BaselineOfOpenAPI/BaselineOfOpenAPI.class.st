@@ -15,7 +15,7 @@ BaselineOfOpenAPI >> baseline: spec [
 				package: 'OpenAPI-Core' with: [ spec requires: #('JSONSchema Core' 'NeoJSON'). ];
 				package: 'OpenAPI-Core-Tests' with: [ spec requires: #('OpenAPI-Core' 'JSONSchema Tests'). ];
 				package: 'OpenAPI-REST' with: [ spec requires: #('OpenAPI-Core' 'ZincHTTPComponents') ];
-				package: 'OpenAPI-REST-Tests' with: [ spec requires: #('OpenAPI-REST') ];
+				package: 'OpenAPI-REST-Tests' with: [ spec requires: #('OpenAPI-REST' 'OpenAPI-Core-Tests') ];
 				package: 'OpenAPI-Client' with: [ spec requires: #('OpenAPI-Core') ];
 				package: 'OpenAPI-Client-Tests' with: [ spec requires: #('OpenAPI-Client') ].
 			spec
