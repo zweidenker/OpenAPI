@@ -25,8 +25,25 @@ OARequestBuilder >> addJSONBody: aDictionary [
 			type: ZnMimeType applicationJson setCharSetUTF8)
 ]
 
+{ #category : 'building' }
+OARequestBuilder >> addCookieParameter: key value: value [
+	"Multiple cookie parameters must accumulate into a single 'Cookie' header
+	(name=value pairs joined by '; '), rather than each overwriting the last."
+	| pair existing |
+	pair := key asString , '=' , value asString.
+	existing := client request headers at: 'Cookie' ifAbsent: [ nil ].
+	client headerAt: 'Cookie' put: (existing
+		ifNil: [ pair ]
+		ifNotNil: [ existing , '; ' , pair ])
+]
+
+{ #category : 'building' }
+OARequestBuilder >> addHeaderParameter: key value: value [
+	client headerAt: key put: value asString
+]
+
 { #category : 'as yet unclassified' }
-OARequestBuilder >> addPathParameter: key value: value [ 
+OARequestBuilder >> addPathParameter: key value: value [
 	pathParameters at: key put: value
 ]
 
