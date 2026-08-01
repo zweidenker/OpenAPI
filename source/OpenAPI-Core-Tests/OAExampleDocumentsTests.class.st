@@ -37,6 +37,24 @@ OAExampleDocumentsTests >> testPetstoreExpandedIsValid [
 ]
 
 { #category : 'tests' }
+OAExampleDocumentsTests >> testPetstoreExpandedPetSchemaMergesAllOfBranchesForReading [
+	"Real-world confirmation: OAExampleDocuments petstoreExpanded's Pet schema is
+	allOf[$ref NewPet, {required:[id], properties:{id}}] - resolves to JSONSchemaAnyObject.
+	Reading a response body against it must merge properties/required from BOTH
+	branches (NewPet contributes name/tag, the inline branch contributes id), not just
+	pass the raw JSON dictionary through."
+	| api petSchema result |
+	api := OpenAPI fromString: OAExampleDocuments petstoreExpanded.
+	petSchema := api components schemas at: 'Pet'.
+	result := petSchema readString: '{"id":42,"name":"Rex","tag":"dog"}'.
+	self assert: result class equals: NeoJSONObject.
+	self assert: result id equals: 42.
+	self assert: result name equals: 'Rex'.
+	self assert: result tag equals: 'dog'.
+	self should: [ petSchema readString: '{"name":"Rex","tag":"dog"}' ] raise: JSONTypeError
+]
+
+{ #category : 'tests' }
 OAExampleDocumentsTests >> testPetstoreIsValid [
 	self assert: (OADocumentValidator isValidDocument: OAExampleDocuments petstore)
 ]
