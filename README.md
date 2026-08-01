@@ -108,7 +108,7 @@ This targets **OpenAPI 3.0** specifically — not a full implementation of every
 - **3.1 / 3.2 are not supported**, and this is a deliberate decision, not an oversight: their dialect is JSON Schema 2020-12 + the OAS vocabulary, which needs `$dynamicRef`/`$dynamicAnchor` resolution, `$ref`-sibling composition and `unevaluated*` applicators — machinery JSONSchema-Core doesn't have yet. A 3.1 meta-schema builds but degrades to accepting anything, since it can't yet enforce the 2020-12 keywords.
 - **`allOf` composition of object schemas** (the common "extends" pattern, e.g. `Pet = allOf[NewPet, {id}]`) merges properties/required/additionalProperties for reading. A mixed/primitive `allOf` (not every branch object-shaped) has no sensible single merge target and stays a raw passthrough.
 - **A schema derived purely from `allOf`** (no explicit `type` keyword of its own) can't re-serialize its `type` keyword through `specString` — a real gap, not silently wrong: it raises rather than guessing.
-- **`OpenAPI-REST`** (server-side routing) is effectively unmaintained legacy code — parallel to, and superseded by, other routing mechanisms in the wider ApptiveGrid ecosystem.
+- **`OpenAPI-REST`** (server-side routing) is effectively unmaintained legacy code: excluding test-infrastructure changes, the entire package has had exactly one commit (the initial import) in the repository's history.
 - Only **local `$ref`s** are resolved (inherited from JSONSchema-Core — no remote/external reference fetching).
 
 If you need something that is missing you are welcome to open a pull request, or a ticket in this repository.
