@@ -12,6 +12,28 @@ Class {
 	#package : 'OpenAPI-Client'
 }
 
+{ #category : 'building' }
+OARequestBuilder >> addCookieParameter: key value: value [
+	"Multiple cookie parameters must accumulate into a single 'Cookie' header
+	(name=value pairs joined by '; '), rather than each overwriting the last."
+	| pair existing |
+	pair := key asString , '=' , value asString.
+	existing := client request headers at: 'Cookie' ifAbsent: [ nil ].
+	client headerAt: 'Cookie' put: (existing
+		ifNil: [ pair ]
+		ifNotNil: [ existing , '; ' , pair ])
+]
+
+{ #category : 'building' }
+OARequestBuilder >> addFormBody: aDictionary [
+	client entity: (ZnApplicationFormUrlEncodedEntity withAll: (self flattenFormParameters: aDictionary))
+]
+
+{ #category : 'building' }
+OARequestBuilder >> addHeaderParameter: key value: value [
+	client headerAt: key put: value asString
+]
+
 { #category : 'as yet unclassified' }
 OARequestBuilder >> addJSONBody: aDictionary [ 
 	client 
@@ -21,7 +43,7 @@ OARequestBuilder >> addJSONBody: aDictionary [
 ]
 
 { #category : 'as yet unclassified' }
-OARequestBuilder >> addPathParameter: key value: value [ 
+OARequestBuilder >> addPathParameter: key value: value [
 	pathParameters at: key put: value
 ]
 
@@ -56,6 +78,38 @@ OARequestBuilder >> buildClient [
 { #category : 'accessing' }
 OARequestBuilder >> client: aClient [ 
 	client := aClient
+]
+
+{ #category : 'forms' }
+OARequestBuilder >> flattenFormParameters: aDictionary [
+	| result |
+	result := Dictionary new.
+	self flattenFormParameters: aDictionary prefix: nil into: result.
+	^ result
+]
+
+{ #category : 'forms' }
+OARequestBuilder >> flattenFormParameters: anObject prefix: aPrefixString into: aDictionary [
+	anObject isString ifTrue: [ 
+		aDictionary at: aPrefixString put: anObject.
+		^ self ].
+	((anObject isKindOf: Dictionary) or: [ anObject isKindOf: OrderedDictionary ]) ifTrue: [ 
+		anObject keysAndValuesDo: [ :k :v |
+			self 
+				flattenFormParameters: v 
+				prefix: (aPrefixString 
+					ifNil: [ k asString ] 
+					ifNotNil: [ aPrefixString , (String with: $[) , k asString , (String with: $]) ])
+				into: aDictionary ].
+		^ self ].
+	(anObject isKindOf: SequenceableCollection) ifTrue: [ 
+		anObject doWithIndex: [ :v :i |
+			self 
+				flattenFormParameters: v 
+				prefix: (aPrefixString , (String with: $[) , (i - 1) asString , (String with: $]))
+				into: aDictionary ].
+		^ self ].
+	aDictionary at: aPrefixString put: anObject asString
 ]
 
 { #category : 'initialization' }

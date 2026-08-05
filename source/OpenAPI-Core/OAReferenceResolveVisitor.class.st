@@ -52,12 +52,14 @@ OAReferenceResolveVisitor >> visit: anObject [
 
 { #category : 'as yet unclassified' }
 OAReferenceResolveVisitor >> visitOpenApi: anApi [
-| visitor |
+	"components is optional per spec; a document without it (or without components.schemas) has nothing to resolve here."
+	| visitor |
 	visitor := JSONSchemaReferenceResolveVisitor new
 			schemaRepository: self.
-	anApi components schemas: (anApi components schemas collect: #asJSONSchema).
-	anApi components schemas: (anApi components schemas collect: [ :definition |
-		 visitor read: definition ]).
+	(anApi components notNil and: [ anApi components schemas notNil ]) ifTrue: [
+		anApi components schemas: (anApi components schemas collect: #asJSONSchema).
+		anApi components schemas: (anApi components schemas collect: [ :definition |
+			 visitor read: definition ]) ].
 	^ super visitOpenApi: anApi
 ]
 

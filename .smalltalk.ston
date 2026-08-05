@@ -1,11 +1,10 @@
 SmalltalkCISpec {
   #loading : [
-      SCIMetacelloLoadSpec {
-          #baseline : 'OpenAPI',
-          #directory : 'source',
-          #load : [ 'Tests' ],
-          #platforms : [ #pharo ]
-      }
+    SCIMetacelloLoadSpec {
+      #baseline : 'OpenAPI',
+      #platforms : [ #pharo ],
+      #directory : 'source',
+      #onConflict : #useIncoming
+    }
   ]
 }
-

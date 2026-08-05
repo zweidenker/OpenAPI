@@ -52,11 +52,15 @@ OAOperation >> api [
 ]
 
 { #category : 'as yet unclassified' }
-OAOperation >> applyBody: body builder: builder [ 
-	self hasBody ifTrue: [  | mediaTypeObject |
-		body ifNil: [ Error signal: 'cannot use nil for body' ].
-		mediaTypeObject := self mediaTypeObjectFor: 'application/json'.
-		mediaTypeObject writeBody: body builder: builder ] 
+OAOperation >> applyBody: body builder: builder [
+	| contentType mediaTypeObject |
+	self hasBody ifFalse: [ ^ self ].
+	body ifNil: [ Error signal: 'cannot use nil for body' ].
+	contentType := requestBody preferredContentType.
+	mediaTypeObject := self mediaTypeObjectFor: contentType.
+	contentType = 'application/x-www-form-urlencoded'
+		ifTrue: [ mediaTypeObject writeFormBody: body builder: builder ]
+		ifFalse: [ mediaTypeObject writeBody: body builder: builder ]
 ]
 
 { #category : 'as yet unclassified' }

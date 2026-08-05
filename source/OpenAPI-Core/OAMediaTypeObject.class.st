@@ -18,10 +18,12 @@ OAMediaTypeObject class >> neoJsonMapping: mapper [
 	mapper for: self do: [ :mapping |
 		mapping mapAccessors: #( encoding ).
 		(mapping mapAccessor: #schema) valueSchema: OASchemaDefinition.
-		(mapping mapAccessor: #example) valueSchema: OAExample.
+		"example (unlike a named entry in #examples) is a raw, arbitrary value per spec - not an
+		Example Object - so no valueSchema: it maps straight through as JSON data."
+		mapping mapAccessor: #example.
 		(mapping mapAccessor: #examples) valueSchema: #OAExamples ].
 	mapper for: #OAExamples customDo: [ :mapping |
-		mapping  mapWithValueSchema: OAExample ]	
+		mapping  mapWithValueSchema: OAExample ]
 ]
 
 { #category : 'visting' }
@@ -39,9 +41,19 @@ OAMediaTypeObject >> encoding [
 	^ encoding
 ]
 
+{ #category : 'accessing' }
+OAMediaTypeObject >> encoding: aDictionary [
+	encoding := aDictionary
+]
+
 { #category : 'as yet unclassified' }
 OAMediaTypeObject >> example [
 	^ example
+]
+
+{ #category : 'accessing' }
+OAMediaTypeObject >> example: anObject [
+	example := anObject
 ]
 
 { #category : 'as yet unclassified' }
@@ -102,9 +114,23 @@ OAMediaTypeObject >> write: anObject [
 ]
 
 { #category : 'as yet unclassified' }
-OAMediaTypeObject >> writeBody: aDictionary builder: builder [ 
-	builder addJSONBody: (schema isAnyObject 
-		ifTrue: [ aDictionary ]
-		ifFalse: [ schema readObject: aDictionary ])
+OAMediaTypeObject >> writeBody: aDictionary builder: builder [
+	"#isAnyObject is only implemented on JSONSchemaObject - any non-object body
+	schema (bare string/array, or an allOf-composed schema which resolves to
+	JSONSchemaAnyObject since nothing sets schemaClass for a bare allOf) used to
+	crash here with #doesNotUnderstand: #isAnyObject. Such schemas degrade to a
+	plain passthrough, same as the JSONSchemaObject-with-no-properties case."
+	builder addJSONBody: (((schema isKindOf: JSONSchemaObject) and: [ schema isAnyObject not ])
+		ifTrue: [ schema readObject: aDictionary ]
+		ifFalse: [ aDictionary ])
 
+]
+
+{ #category : 'as yet unclassified' }
+OAMediaTypeObject >> writeFormBody: aDictionary builder: builder [
+	"See #writeBody:builder: for why this checks (schema isKindOf: JSONSchemaObject)
+	instead of unconditionally sending #isAnyObject."
+	builder addFormBody: (((schema isKindOf: JSONSchemaObject) and: [ schema isAnyObject not ])
+		ifTrue: [ schema readObject: aDictionary ]
+		ifFalse: [ aDictionary ])
 ]

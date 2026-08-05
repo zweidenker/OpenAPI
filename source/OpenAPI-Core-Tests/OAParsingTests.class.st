@@ -727,7 +727,7 @@ OAParsingTests >> testParsingOpenAPI [
 	self assert: api paths size = 2.
 
 	path := api paths values first.
-	path should beInstanceOf: OAPathItem.
+	self assert: (path isKindOf: OAPathItem)
 ]
 
 { #category : 'tests' }
@@ -738,33 +738,28 @@ OAParsingTests >> testParsingOperation [
 
 
 	responses := operation responses.
-
-	responses should
-		beInstanceOf: Dictionary;
-		haveSize: 2;
-		includeKey: '405';
-		includeKey: '200'.
+	self assert: (responses isKindOf: Dictionary).
+	self assert: responses size equals: 2.
+	self assert: (responses includesKey: '405').
+	self assert: (responses includesKey: '200').
 
 	response405 := responses at: '405'.
-	response405 should beInstanceOf: OAResponse.
-	response405 description should equal: 'Invalid input'.
-	"response405 headers should beInstanceOf: OAHeader."
-	response405 content should
-		beInstanceOf: Dictionary;
-		haveSize: 2;
-		includeKey: 'application/json';
-		includeKey: 'application/xml'.
-	response405 content values do: [ :each | each should beInstanceOf: OAMediaTypeObject. ].
+	self assert: (response405 isKindOf: OAResponse).
+	self assert: response405 description equals: 'Invalid input'.
+	self assert: (response405 content isKindOf: Dictionary).
+	self assert: response405 content size equals: 2.
+	self assert: (response405 content includesKey: 'application/json').
+	self assert: (response405 content includesKey: 'application/xml').
+	response405 content values do: [ :each | self assert: (each isKindOf: OAMediaTypeObject) ].
 
 	response200 := responses at: '200'.
-	response200 should beInstanceOf: OAResponse.
-	response200 description should equal: 'Pet updated.'.
-	response200 content should
-		beInstanceOf: Dictionary;
-		haveSize: 2;
-		includeKey: 'application/json';
-		includeKey: 'application/xml'.
-	response200 content values do: [ :each | each should beInstanceOf: OAMediaTypeObject. ].
+	self assert: (response200 isKindOf: OAResponse).
+	self assert: response200 description equals: 'Pet updated.'.
+	self assert: (response200 content isKindOf: Dictionary).
+	self assert: response200 content size equals: 2.
+	self assert: (response200 content includesKey: 'application/json').
+	self assert: (response200 content includesKey: 'application/xml').
+	response200 content values do: [ :each | self assert: (each isKindOf: OAMediaTypeObject) ].
 ]
 
 { #category : 'tests' }
@@ -785,11 +780,10 @@ OAParsingTests >> testParsingParameterWithSchemaReference [
 OAParsingTests >> testParsingPaths [
 	| paths |
 	paths := (NeoJSONReader on: self pathsObjectJSON readStream)
-		for: #OAPaths customDo: [ :mapping | mapping mapWithValueSchema: OAPathItem. ];
+		for: #OAPaths customDo: [ :mapping | mapping mapWithValueSchema: OAPathItem ];
 		nextAs: #OAPaths.
 	self assert: paths notEmpty.
-
-	paths should haveSize: 1.
+	self assert: paths size equals: 1
 ]
 
 { #category : 'tests' }
@@ -815,14 +809,12 @@ OAParsingTests >> testParsingResponse [
 	| response |
 	response := NeoJSONReader fromString: self responseObjectJSON as: OAResponse.
 
-	response should beInstanceOf: OAResponse.
-	response description should equal: 'A complex object array response'.
-
-	response content should
-		beInstanceOf: Dictionary;
-		haveSize: 1;
-		includeKey: 'application/json'.
-	response content values do: [ :each | each should beInstanceOf: OAMediaTypeObject. ].
+	self assert: (response isKindOf: OAResponse).
+	self assert: response description equals: 'A complex object array response'.
+	self assert: (response content isKindOf: Dictionary).
+	self assert: response content size equals: 1.
+	self assert: (response content includesKey: 'application/json').
+	response content values do: [ :each | self assert: (each isKindOf: OAMediaTypeObject) ].
 ]
 
 { #category : 'tests' }

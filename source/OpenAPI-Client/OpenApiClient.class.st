@@ -33,6 +33,11 @@ OpenApiClient >> call: aString withArguments: aCollection [
 
 ]
 
+{ #category : 'requests' }
+OpenApiClient >> handleError: anObject request: aRequest response: aResponse [
+	^ self handleError: anObject response: aResponse
+]
+
 { #category : 'as yet unclassified' }
 OpenApiClient >> handleError: anObject response: aResponse [ 
 	(OAUnspecifiedError new
