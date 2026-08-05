@@ -32,10 +32,10 @@ BaselineOfOpenAPI >> baseline: spec [
 
 { #category : 'baselines' }
 BaselineOfOpenAPI >> jsonSchema: spec [
-	spec 
-		baseline: 'JSONSchema' with: [ 
-			spec repository: 'github://ApptiveGrid/JSONSchema:0.3/source' ].
-	spec 
+	spec
+		baseline: 'JSONSchema' with: [
+			spec repository: 'github://ApptiveGrid/JSONSchema:master/source' ].
+	spec
 		project: 'JSONSchema Core' copyFrom: 'JSONSchema' with: [
 			spec loads: 'Core'];
 		project: 'JSONSchema Tests' copyFrom: 'JSONSchema' with: [
